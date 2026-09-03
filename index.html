@@ -3,20 +3,21 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Alex - Freelancer</title>
+    <title>Aleksandr Liashenko | Full Stack Engineer & Software Developer</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="Aleksandr Liashenko, Full Stack Engineer, AI Developer, React, Django, Python, C#, Unity, Cybersecurity, Portfolio, Fukuoka, Japan" name="keywords">
+    <meta content="Portfolio of Aleksandr Liashenko - Full Stack Engineer & Software Developer with 10+ years of experience in Web Applications, AI Integration, Cyber Security systems (EASM & BAS), and Game Development. Based in Fukuoka, Japan." name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2225%22 fill=%22%230a0f1d%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 font-family=%22system-ui,sans-serif%22 font-weight=%22900%22 fill=%22%230bceaf%22 text-anchor=%22middle%22>A</text></svg>">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -24,492 +25,1197 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Modern Dark-Slate Design System -->
+    <link href="css/modern.css" rel="stylesheet">
+
+    <!-- Early Language Detection (Prevents FOUT) -->
+    <script>
+        (function() {
+            try {
+                var stored = localStorage.getItem('portfolio_language');
+                var isJa = stored === 'ja' || (!stored && (navigator.language || (navigator.languages && navigator.languages[0]) || '').toLowerCase().startsWith('ja'));
+                if (isJa) document.documentElement.lang = 'ja';
+            } catch(e) {}
+        })();
+    </script>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span class="text-primary">Alex</span></h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Top</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#qualification" class="nav-item nav-link">Quality</a>
-                <a href="#skill" class="nav-item nav-link">Skill</a>
-                <a href="#service" class="nav-item nav-link">Service</a>
-                <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
+<body data-spy="scroll" data-target=".navbar-modern" data-offset="80">
+
+    <!-- Modern Sticky Glass Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-modern">
+        <div class="container">
+            <a href="index.html" class="navbar-brand-modern">
+                <div class="brand-icon">&lt;/&gt;</div>
+                <div class="brand-name">Aleksandr<span>.dev</span></div>
+            </a>
+
+            <!-- Header Controls: Language Switcher + Resume + Hamburger -->
+            <div class="d-flex align-items-center order-lg-3">
+                <div class="lang-switcher mr-2 mr-lg-3" id="langSwitcher" role="group" aria-label="Language Selector">
+                    <button type="button" class="lang-btn" data-lang-set="en" title="English">EN</button>
+                    <button type="button" class="lang-btn" data-lang-set="ja" title="日本語">日本語</button>
+                </div>
+                <a href="cv.zip" class="btn-nav-cta d-none d-lg-inline-flex"><i class="fas fa-download mr-1"></i> <span data-i18n="nav.resume">Resume</span></a>
+                <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-lg-2" id="navbarCollapse">
+                <ul class="navbar-nav mx-auto py-0">
+                    <li class="nav-item"><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                    <li class="nav-item"><a href="#qualification" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+                    <li class="nav-item"><a href="#skill" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                    <li class="nav-item"><a href="#service" class="nav-link" data-i18n="nav.services">Services</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                </ul>
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
 
-
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>        
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
-
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+    <!-- Hero Section -->
+    <header class="hero-section" id="home">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/profile.jpg" alt="">
-                </div>
                 <div class="col-lg-7 text-center text-lg-left">
-                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Aleksandr Liashenko</h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Unity Engineer, Games Developer, Front End Developer, Apps Developer</div>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="cv.zip" class="btn btn-outline-light mr-5">Download CV</a>
+                    <div class="hero-status-badge">
+                        <span class="status-dot"></span>
+                        <span data-i18n="hero.status_badge">Available for Senior Roles &amp; Contracts &bull; Fukuoka, Japan</span>
                     </div>
+                    <h1 class="hero-title">
+                        <span data-i18n="hero.greeting">Hi, I'm</span> <br class="d-none d-sm-block">
+                        <span class="gradient-name">Aleksandr Liashenko</span>
+                    </h1>
+                    <div class="hero-role-wrapper">
+                        <span class="hero-role-prefix" data-i18n="hero.specialized_prefix">Specialized in</span>
+                        <span class="typed-text-output"></span>
+                        <div class="typed-text d-none">Full Stack Web Engineering, AI &amp; LLM Integration, Cyber Security Platforms (EASM &amp; BAS), High-Performance .NET &amp; Go, Unity 3D &amp; Interactive Graphics</div>
+                    </div>
+                    <p class="hero-bio" data-i18n="hero.bio">
+                        Full Stack Engineer &amp; Software Developer with <strong>10+ years of experience</strong> building enterprise web applications, autonomous AI agents, security intelligence systems, and interactive 3D simulations. Based in Fukuoka, Japan.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#portfolio" class="btn-modern-primary">
+                            <span data-i18n="actions.explore_projects">Explore Projects</span>
+                            <i class="fas fa-arrow-down ml-1"></i>
+                        </a>
+                        <a href="#contact" class="btn-modern-secondary">
+                            <i class="far fa-envelope mr-1"></i>
+                            <span data-i18n="actions.get_in_touch">Get in Touch</span>
+                        </a>
+                        <a href="cv.zip" class="btn-modern-secondary">
+                            <i class="fas fa-file-download mr-1"></i>
+                            <span data-i18n="actions.download_cv">Download CV</span>
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="col-lg-5 mt-5 mt-lg-0">
+                    <div class="hero-avatar-wrapper">
+                        <div class="hero-avatar-glow"></div>
+                        <div class="hero-avatar-card">
+                            <img class="hero-avatar-img" src="img/profile.jpg" alt="Aleksandr Liashenko - Full Stack Engineer">
+                            <div class="hero-avatar-badge">
+                                <div class="badge-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="badge-text">
+                                    <strong data-i18n="hero.badge_title">Data Protection</strong>
+                                    <span data-i18n="hero.badge_subtitle">B.S. Security Specialist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid (Full Width Spanning Container) -->
+            <div class="hero-stats-row">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label" data-i18n="hero.stat_years">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">16+</div>
+                    <div class="stat-label" data-i18n="hero.stat_projects">Featured Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Full-Stack</div>
+                    <div class="stat-label" data-i18n="hero.stat_stack">&amp; AI Intelligence</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Bilingual</div>
+                    <div class="stat-label" data-i18n="hero.stat_languages">Japanese &amp; English</div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Header End -->
+    </header>
 
-
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
+    <!-- About Section -->
+    <section class="section-modern" id="about">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
+            <div class="section-header-modern">
+                <span class="section-tag" data-i18n="about.tag">// 01. ABOUT ME</span>
+                <h2 class="section-title" data-i18n="about.title">Architecting Resilient &amp; Intelligent Software</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">Bridging cybersecurity fundamentals, full-stack web agility, generative AI workflows, and interactive 3D simulations.</p>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="img/about.jpg" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <h3 class="mb-4">Unity Engineer & Games Developer</h3>
-                    <p>I am a highly skilled full-stack engineer with extensive experience in various software and programming languages. With a strong background in Unity3d, C#, Photoshop, and 3D modeling software such as Blender 3D and 3D Studio Max, Additionally, I possess knowledge in JavaScript, OpenAi, Html, Construct, and Css. Having completed my Bachelor's degree at North Caucasus Federal University, I currently reside in Fukuoka, Japan, where I continue to pursue my passion for technology and design.</p>
-                    <div class="row mb-3">
-                        <div class="col-sm-6 py-2"><h6>Name: <span class="text-secondary">Aleksandr Liashenko</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Birthday: <span class="text-secondary">02 November 1987</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Degree: <span class="text-secondary">Bachelor</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">10+ Years</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">wshuher@gmail.com</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">Fukuoka, Japan</span></h6></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
 
-
-    <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
-            </div>
-            <div class="row align-items-start">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Bachelor In Data Protection</h5>
-                            <p class="mb-2"><strong>North Caucasus Federal University</strong> | <small>2005 - 2010</small></p>
-                            <p>This educational experience provided me with a comprehensive understanding of data security and privacy measures. </p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1"></h5>
-                            <p class="mb-2"><strong>Unitas Japanese language school</strong> | <small>2018 - 2020</small></p>
-                            <p>I decided to enhance my language skills and cultural knowledge. This language education equipped me with the ability to communicate in Japanese and broadened my horizons by immersing me in Japanese culture.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Expericence</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Unity Engineer & Game Developer</h5>
-                            <p class="mb-2"><strong>Vice</strong> | <small>2020 - 2023</small></p>
-                            <p>During my time at Vice, I worked as a Unity Engineer and Game Developer. I actively participated in the development of immersive and engaging gaming experiences. Leveraging my knowledge of Unity3D, C#, and other relevant technologies, I contributed to the programming and debugging of game mechanics, ensuring a seamless and enjoyable player experience.</p>
-                        </div>
-						<div class="position-relative mb-4">
-							<i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-							<h5 class="font-weight-bold mb-1">Software Developer</h5>
-							<p class="mb-2"><strong>Millionet</strong> | <small>2023 - 2025</small></p>
-							<p>Developing a .NET Customer Analytics Dashboard and a Churn Prediction web tool. Additionally, responsible for designing and integrating AI models to enhance predictive capabilities and optimize customer insights.</p>
-						</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Qualification End -->
-
-
-    <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Unity</h6>
-                            <h6 class="font-weight-bold">90%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">C#</h6>
-                            <h6 class="font-weight-bold">85%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Javascript</h6>
-                            <h6 class="font-weight-bold">80%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-					<div class="skill mb-4">
-						<div class="d-flex justify-content-between">
-							<h6 class="font-weight-bold">Django</h6>
-							<h6 class="font-weight-bold">75%</h6>
-						</div>
-						<div class="progress">
-							<div class="progress-bar bg-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-					<div class="skill mb-4">
-						<div class="d-flex justify-content-between">
-							<h6 class="font-weight-bold">PHP</h6>
-							<h6 class="font-weight-bold">80%</h6>
-						</div>
-						<div class="progress">
-							<div class="progress-bar bg-dark" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-					<div class="skill mb-4">
-						<div class="d-flex justify-content-between">
-							<h6 class="font-weight-bold">Laravel</h6>
-							<h6 class="font-weight-bold">80%</h6>
-						</div>
-						<div class="progress">
-							<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-					<div class="skill mb-4">
-						<div class="d-flex justify-content-between">
-							<h6 class="font-weight-bold">Go</h6>
-							<h6 class="font-weight-bold">85%</h6>
-						</div>
-						<div class="progress">
-							<div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-                </div>
-				
-                <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">HTML</h6>
-                            <h6 class="font-weight-bold">90%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">CSS</h6>
-                            <h6 class="font-weight-bold">90%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Photoshop</h6>
-                            <h6 class="font-weight-bold">85%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-					<div class="skill mb-4">
-						<div class="d-flex justify-content-between">
-							<h6 class="font-weight-bold">React</h6>
-							<h6 class="font-weight-bold">80%</h6>
-						</div>
-						<div class="progress">
-							<div class="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-					<div class="skill mb-4">
-						<div class="d-flex justify-content-between">
-							<h6 class="font-weight-bold">AngularJS</h6>
-							<h6 class="font-weight-bold">85%</h6>
-						</div>
-						<div class="progress">
-							<div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-					<div class="skill mb-4">
-						<div class="d-flex justify-content-between">
-							<h6 class="font-weight-bold">Vue.js</h6>
-							<h6 class="font-weight-bold">85%</h6>
-						</div>
-						<div class="progress">
-							<div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-					<div class="skill mb-4">
-						<div class="d-flex justify-content-between">
-							<h6 class="font-weight-bold">SQL</h6>
-							<h6 class="font-weight-bold">90%</h6>
-						</div>
-						<div class="progress">
-							<div class="progress-bar bg-dark" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Skill End -->
-
-
-    <!-- Services Start -->
-    <div class="container-fluid pt-5" id="service">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Service</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Services</h1>
-            </div>
-            <div class="row pb-3">
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-laptop service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Game Development</h4>
-                    </div>
-                    <p>Whether you need assistance in developing game mechanics, implementing features, or optimizing performance, I am equipped to deliver high-quality and engaging games tailored to your vision.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fab fa-2x fa-android service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Apps Development</h4>
-                    </div>
-                    <p>With expertise in various mobile platforms such as iOS and Android, I can assist in app development, deployment, ensuring compatibility and optimal performance.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-laptop-code service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Design Documentation</h4>
-                    </div>
-                    <p>Games Design Documentation serves as a blueprint for the development team, ensuring clear communication and alignment throughout the game production cycle, resulting in cohesive and well-executed game designs.</p>
-                </div>
-				<div class="col-lg-4 col-md-6 text-center mb-5">
-					<div class="d-flex align-items-center justify-content-center mb-4">
-						<i class="fa fa-2x fa-brain service-icon bg-primary text-white mr-3"></i>
-						<h4 class="font-weight-bold m-0">AI Development</h4>
-					</div>
-					<p>Create solutions that enhance automation, decision-making, and predictive capabilities. Whether it's building AI models for various industries or integrating machine learning into existing systems, I deliver intelligent, data-driven results.</p>
-				</div>
-            </div>
-        </div>
-    </div>
-    <!-- Services End -->
-
-
-    <!-- Portfolio Start -->
-    <div class="container-fluid pt-5 pb-3" id="portfolio">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Gallery</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Portfolio</h1>
-            </div>
             <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active"  data-filter="*">All</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".games">Games</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".apps">Applications</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row portfolio-container">
-				<div class="col-lg-4 col-md-6 mb-4 portfolio-item second games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="shooters_dush.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-14.png" alt=""></a>
-                    </div>
-                </div>
-				<div class="col-lg-4 col-md-6 mb-4 portfolio-item second games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="new_traffic.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-13.png" alt=""></a>
-                    </div>
-                </div>
-				<div class="col-lg-4 col-md-6 mb-4 portfolio-item second apps">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="Customer_Analytics_Dashboard.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-12.jpg" alt=""></a>
-                    </div>
-                </div>
-				<div class="col-lg-4 col-md-6 mb-4 portfolio-item second games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="desert.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-10.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="asteroids.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-11.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="some_rpg.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-1.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="buildings_demolition.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-2.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="road.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-3.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="fighting.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-4.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second apps">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="kanji.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-5.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="thimnbail.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-6.jpg" alt=""></a>
-                    </div>
-                </div>
-				<div class="col-lg-4 col-md-6 mb-4 portfolio-item first games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="tic.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-7.jpg" alt=""></a>
-                    </div>
-                </div>
-				<div class="col-lg-4 col-md-6 mb-4 portfolio-item second games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="mr_shape.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-8.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third games">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <a href="work-work.html"><img class="pic-hower port-square img-fluid rounded w-100" src="img/portfolio-9.jpg" alt=""></a>
+                <div class="col-lg-12">
+                    <div class="about-card">
+                        <div class="row align-items-start">
+                            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                                <img class="img-fluid rounded shadow" src="img/about.jpg" alt="About Aleksandr Liashenko" style="border: 1px solid var(--border-subtle); max-height: 380px; width: 100%; object-fit: cover;">
+                            </div>
+                            <div class="col-lg-8 pl-lg-4">
+                                <h3 class="mb-3" style="font-size: 1.6rem; font-weight: 700;" data-i18n="about.role_heading">Full Stack Engineer &amp; Software Developer</h3>
+                                <p data-i18n="about.p1">
+                                    I am a versatile and driven software engineer with over a decade of hands-on experience designing, architecting, and deploying complex software systems across modern web stacks, AI integrations, cybersecurity tools, and interactive applications.
+                                </p>
+                                <p data-i18n="about.p2">
+                                    With an academic background in <strong>Data Protection</strong> from North Caucasus Federal University, I incorporate defense-in-depth and security best practices into every tier of software development. Recent highlights include developing enterprise cyber security platforms (EASM &amp; BAS), automated AI knowledge assistants, high-throughput .NET enterprise tools, and real-time multiplayer microservices with Go.
+                                </p>
+                                <p class="mb-0" data-i18n="about.p3">
+                                    Based in <strong>Fukuoka, Japan</strong>, I collaborate fluently with cross-functional Japanese and multinational engineering teams.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="about-highlight-grid">
+                            <div class="highlight-pill">
+                                <div class="highlight-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="highlight-info">
+                                    <div class="info-label" data-i18n="about.degree_label">Degree</div>
+                                    <div class="info-value" data-i18n="about.degree_val">Bachelor in Data Protection</div>
+                                </div>
+                            </div>
+                            <div class="highlight-pill">
+                                <div class="highlight-icon"><i class="fas fa-language"></i></div>
+                                <div class="highlight-info">
+                                    <div class="info-label" data-i18n="about.languages_label">Languages</div>
+                                    <div class="info-value" data-i18n="about.languages_val">Japanese (Fluent) &bull; English (TOEIC 760)</div>
+                                </div>
+                            </div>
+                            <div class="highlight-pill">
+                                <div class="highlight-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="highlight-info">
+                                    <div class="info-label" data-i18n="about.location_label">Location</div>
+                                    <div class="info-value" data-i18n="about.location_val">Fukuoka, Japan</div>
+                                </div>
+                            </div>
+                            <div class="highlight-pill">
+                                <div class="highlight-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="highlight-info">
+                                    <div class="info-label" data-i18n="about.email_label">Email</div>
+                                    <div class="info-value">wshuher@gmail.com</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resume Documents Deck -->
+                        <div class="resume-download-deck">
+                            <a href="cv.zip" class="resume-download-card" download>
+                                <div class="resume-card-left">
+                                    <i class="fas fa-file-archive resume-file-icon"></i>
+                                    <div>
+                                        <div class="resume-file-title" data-i18n="about.deck_cv_title">Complete CV Package</div>
+                                        <div class="resume-file-type" data-i18n="about.deck_cv_sub">ZIP &bull; All Resumes &amp; Documents</div>
+                                    </div>
+                                </div>
+                                <div class="resume-download-btn"><i class="fas fa-arrow-down"></i></div>
+                            </a>
+
+                            <a href="Liashenko%20Aleksandr%20%E5%B1%A5%E6%AD%B4%E6%9B%B8.pdf" target="_blank" class="resume-download-card">
+                                <div class="resume-card-left">
+                                    <i class="fas fa-file-pdf resume-file-icon"></i>
+                                    <div>
+                                        <div class="resume-file-title" data-i18n="about.deck_resume_title">履歴書 (Japanese Resume)</div>
+                                        <div class="resume-file-type" data-i18n="about.deck_resume_sub">PDF &bull; 日本語 標準形式</div>
+                                    </div>
+                                </div>
+                                <div class="resume-download-btn"><i class="fas fa-external-link-alt"></i></div>
+                            </a>
+
+                            <a href="Liashenko%20Aleksandr%20%E8%81%B7%E5%8B%99%E7%B5%8C%E6%AD%B4%E6%9B%B8.pdf" target="_blank" class="resume-download-card">
+                                <div class="resume-card-left">
+                                    <i class="fas fa-file-invoice resume-file-icon"></i>
+                                    <div>
+                                        <div class="resume-file-title" data-i18n="about.deck_history_title">職務経歴書 (Career History)</div>
+                                        <div class="resume-file-type" data-i18n="about.deck_history_sub">PDF &bull; 詳細な職務実績</div>
+                                    </div>
+                                </div>
+                                <div class="resume-download-btn"><i class="fas fa-external-link-alt"></i></div>
+                            </a>
+
+                            <a href="Portfolio.pdf" target="_blank" class="resume-download-card">
+                                <div class="resume-card-left">
+                                    <i class="fas fa-book-open resume-file-icon"></i>
+                                    <div>
+                                        <div class="resume-file-title" data-i18n="about.deck_portfolio_title">Portfolio Booklet</div>
+                                        <div class="resume-file-type" data-i18n="about.deck_portfolio_sub">PDF &bull; Complete Visual Dossier</div>
+                                    </div>
+                                </div>
+                                <div class="resume-download-btn"><i class="fas fa-external-link-alt"></i></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Portfolio End -->
+    </section>
 
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
+    <!-- Experience & Education Section -->
+    <section class="section-modern" id="qualification">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
+            <div class="section-header-modern">
+                <span class="section-tag" data-i18n="experience.tag">// 02. CAREER &amp; CREDENTIALS</span>
+                <h2 class="section-title" data-i18n="experience.title">Experience &amp; Education</h2>
+                <p class="section-subtitle" data-i18n="experience.subtitle">A proven track record of engineering leadership, enterprise system deliveries, and academic specialization.</p>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form text-center">
+
+            <div class="row">
+                <!-- Experience Column -->
+                <div class="col-lg-6 mb-5 mb-lg-0 timeline-column">
+                    <div class="timeline-column-header">
+                        <i class="fas fa-briefcase"></i>
+                        <h3 class="m-0" style="font-size: 1.4rem;" data-i18n="experience.col_work">Work Experience</h3>
+                    </div>
+
+                    <div class="timeline-container">
+                        <!-- Q Continuum -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-role" data-i18n="experience.q_role">Full Stack Engineer</div>
+                                <div class="timeline-meta">
+                                    <span class="meta-company" data-i18n="experience.q_company">株式会社キューコンテニウム (Q Continuum)</span>
+                                    <span class="timeline-period">2025 &ndash; 2026</span>
+                                </div>
+                                <ul class="timeline-desc pl-3">
+                                    <li data-i18n="experience.q_b1">Architected and developed <strong>AiQON Security App (EASM &amp; BAS)</strong> combining internet asset discovery, vulnerability funnels, and autonomous attack simulation agents.</li>
+                                    <li data-i18n="experience.q_b2">Built <strong>AiQONassist</strong> B2B conversational AI knowledge base with vectorized document search and automated client workflows.</li>
+                                    <li data-i18n="experience.q_b3">Engineered backend services with Django, Python, and PostgreSQL, alongside reactive React dark-mode dashboards and OpenAI API integrations.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Millionet -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-role" data-i18n="experience.m_role">.NET &amp; Full Stack Engineer</div>
+                                <div class="timeline-meta">
+                                    <span class="meta-company" data-i18n="experience.m_company">株式会社ミリオネット (Millionet)</span>
+                                    <span class="timeline-period">2023 &ndash; 2025</span>
+                                </div>
+                                <ul class="timeline-desc pl-3">
+                                    <li data-i18n="experience.m_b1">Led development of mission-critical enterprise systems: <strong>絞り.COM+</strong> desktop (C# / WinForms) and cloud web applications (Django, React, Python).</li>
+                                    <li data-i18n="experience.m_b2">Engineered the <strong>Customer Analytics Dashboard</strong> with predictive customer churn modeling and automated data export pipelines.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Vice -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-role" data-i18n="experience.v_role">Unity Engineer &amp; Game Developer</div>
+                                <div class="timeline-meta">
+                                    <span class="meta-company" data-i18n="experience.v_company">株式会社ヴァイス (Vice)</span>
+                                    <span class="timeline-period">2020 &ndash; 2023</span>
+                                </div>
+                                <ul class="timeline-desc pl-3">
+                                    <li data-i18n="experience.v_b1">Engineered cross-platform interactive games and client-server systems (Touch Card, Work Work, Poker, Hypercasual Racing) with Unity3D &amp; C#.</li>
+                                    <li data-i18n="experience.v_b2">Developed high-throughput real-time game analytics microservices utilizing Go, WebSockets, and Vue.js.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Demo-Club -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-role" data-i18n="experience.d_role">Web Developer &amp; Operator</div>
+                                <div class="timeline-meta">
+                                    <span class="meta-company" data-i18n="experience.d_company">Demo-Club</span>
+                                    <span class="timeline-period">2014 &ndash; 2018</span>
+                                </div>
+                                <ul class="timeline-desc pl-3">
+                                    <li data-i18n="experience.d_b1">Constructed responsive web portals and integrated service platforms utilizing PHP (Laravel, CodeIgniter), React, AngularJS, and MySQL.</li>
+                                    <li data-i18n="experience.d_b2">Engineered third-party RESTful integrations, payment gateways, and automated administrative dashboards.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Column -->
+                <div class="col-lg-6 timeline-column">
+                    <div class="timeline-column-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3 class="m-0" style="font-size: 1.4rem;" data-i18n="experience.col_edu">Education &amp; Credentials</h3>
+                    </div>
+
+                    <div class="timeline-container">
+                        <!-- Degree -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-role" data-i18n="experience.edu1_role">Bachelor in Data Protection</div>
+                                <div class="timeline-meta">
+                                    <span class="meta-company" data-i18n="experience.edu1_school">North Caucasus Federal University</span>
+                                    <span class="timeline-period">2005 &ndash; 2010</span>
+                                </div>
+                                <p class="timeline-desc" data-i18n="experience.edu1_desc">
+                                    Specialized five-year academic training in information systems security, data protection methodologies, cryptography, vulnerability assessment, and secure software defense architecture.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Japanese School -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-role" data-i18n="experience.edu2_role">Japanese Language &amp; Culture</div>
+                                <div class="timeline-meta">
+                                    <span class="meta-company" data-i18n="experience.edu2_school">Unitas Japanese Language School (甲府)</span>
+                                    <span class="timeline-period">2018 &ndash; 2020</span>
+                                </div>
+                                <p class="timeline-desc" data-i18n="experience.edu2_desc">
+                                    Completed rigorous 2-year intensive Japanese language and cultural immersion program, enabling seamless bilingual technical collaboration and communication in Japanese corporate environments.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- TOEIC -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-role" data-i18n="experience.edu3_role">TOEIC 760 Certification</div>
+                                <div class="timeline-meta">
+                                    <span class="meta-company" data-i18n="experience.edu3_school">ETS TOEIC</span>
+                                    <span class="timeline-period">March 2019</span>
+                                </div>
+                                <p class="timeline-desc" data-i18n="experience.edu3_desc">
+                                    Demonstrated professional English communication skills for technical research, specification writing, and cross-functional international collaboration.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section-modern" id="skill">
+        <div class="container">
+            <div class="section-header-modern">
+                <span class="section-tag" data-i18n="skills.tag">// 03. TECHNICAL CAPABILITIES</span>
+                <h2 class="section-title" data-i18n="skills.title">Skills &amp; Technology Stack</h2>
+                <p class="section-subtitle" data-i18n="skills.subtitle">Battle-tested tools and frameworks utilized across production enterprise software, AI systems, and game engineering.</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Backend & Cloud -->
+                <div class="skill-category-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fas fa-server"></i></div>
+                        <h4 class="skill-card-title" data-i18n="skills.cat_backend">Backend &amp; Cloud Architecture</h4>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip featured"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-chip featured"><i class="fas fa-cubes"></i> Django</span>
+                        <span class="skill-chip featured"><i class="fas fa-database"></i> PostgreSQL</span>
+                        <span class="skill-chip"><i class="fab fa-microsoft"></i> C# / .NET</span>
+                        <span class="skill-chip"><i class="fab fa-golang"></i> Go (Golang)</span>
+                        <span class="skill-chip"><i class="fas fa-network-wired"></i> RESTful APIs</span>
+                        <span class="skill-chip"><i class="fas fa-bolt"></i> WebSockets</span>
+                        <span class="skill-chip"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-chip"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="skill-chip"><i class="fab fa-linux"></i> Linux / Cloud</span>
+                    </div>
+                </div>
+
+                <!-- Frontend & UI/UX -->
+                <div class="skill-category-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fas fa-desktop"></i></div>
+                        <h4 class="skill-card-title" data-i18n="skills.cat_frontend">Frontend &amp; Reactive UI</h4>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip featured"><i class="fab fa-react"></i> React.js</span>
+                        <span class="skill-chip featured"><i class="fab fa-js"></i> JavaScript (ES6+)</span>
+                        <span class="skill-chip"><i class="fab fa-vuejs"></i> Vue.js</span>
+                        <span class="skill-chip"><i class="fab fa-html5"></i> HTML5 &amp; CSS3</span>
+                        <span class="skill-chip"><i class="fab fa-sass"></i> SCSS / CSS</span>
+                        <span class="skill-chip"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        <span class="skill-chip"><i class="fas fa-palette"></i> UI/UX Design</span>
+                        <span class="skill-chip"><i class="fas fa-mobile-alt"></i> Responsive Layouts</span>
+                    </div>
+                </div>
+
+                <!-- AI & Cyber Security -->
+                <div class="skill-category-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fas fa-brain"></i></div>
+                        <h4 class="skill-card-title" data-i18n="skills.cat_ai_sec">AI &amp; Cyber Security</h4>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip featured"><i class="fas fa-robot"></i> OpenAI API</span>
+                        <span class="skill-chip featured"><i class="fas fa-microchip"></i> Google AI API</span>
+                        <span class="skill-chip featured"><i class="fas fa-shield-alt"></i> EASM &amp; BAS</span>
+                        <span class="skill-chip"><i class="fas fa-comments"></i> AI Chatbots</span>
+                        <span class="skill-chip"><i class="fas fa-vector-square"></i> Vector DB / RAG</span>
+                        <span class="skill-chip"><i class="fas fa-lock"></i> Data Protection</span>
+                        <span class="skill-chip"><i class="fas fa-user-shield"></i> Security Architecture</span>
+                        <span class="skill-chip"><i class="fas fa-chart-line"></i> Churn Analytics</span>
+                    </div>
+                </div>
+
+                <!-- 3D & Game Engine -->
+                <div class="skill-category-card">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fas fa-gamepad"></i></div>
+                        <h4 class="skill-card-title" data-i18n="skills.cat_games">Game Engines &amp; 3D Graphics</h4>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip featured"><i class="fab fa-unity"></i> Unity3D</span>
+                        <span class="skill-chip featured"><i class="fas fa-code"></i> C# Game Architecture</span>
+                        <span class="skill-chip"><i class="fas fa-cube"></i> Blender 3D</span>
+                        <span class="skill-chip"><i class="fas fa-shapes"></i> 3ds Max</span>
+                        <span class="skill-chip"><i class="fas fa-magic"></i> Shaders &amp; VFX</span>
+                        <span class="skill-chip"><i class="fas fa-globe"></i> Unity WebGL</span>
+                        <span class="skill-chip"><i class="fas fa-image"></i> Photoshop</span>
+                        <span class="skill-chip"><i class="fas fa-tachometer-alt"></i> Mobile Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-modern" id="service">
+        <div class="container">
+            <div class="section-header-modern">
+                <span class="section-tag" data-i18n="services.tag">// 04. WHAT I DELIVER</span>
+                <h2 class="section-title" data-i18n="services.title">Core Engineering Services</h2>
+                <p class="section-subtitle" data-i18n="services.subtitle">End-to-end technical execution from initial architectural blueprint to production deployment and maintenance.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Full Stack Web -->
+                <div class="service-card-modern">
+                    <div class="service-icon-box">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.s1_title">Full Stack Web Engineering</h3>
+                    <p class="service-text" data-i18n="services.s1_desc">
+                        End-to-end responsive web applications with reactive frontends (React, Vue) and resilient backends (Django, Python, Go, PostgreSQL) featuring high-throughput RESTful and WebSocket APIs.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">React</span>
+                        <span class="service-tag">Django</span>
+                        <span class="service-tag">PostgreSQL</span>
+                        <span class="service-tag">Go</span>
+                    </div>
+                </div>
+
+                <!-- AI Systems -->
+                <div class="service-card-modern">
+                    <div class="service-icon-box">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.s2_title">AI &amp; Intelligent Automation</h3>
+                    <p class="service-text" data-i18n="services.s2_desc">
+                        Harnessing modern Large Language Models and predictive intelligence (OpenAI API, Google API) to engineer autonomous agents, corporate knowledge bases, B2B chatbots, and churn prediction systems.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">OpenAI API</span>
+                        <span class="service-tag">RAG</span>
+                        <span class="service-tag">AI Chatbots</span>
+                        <span class="service-tag">Analytics</span>
+                    </div>
+                </div>
+
+                <!-- Cyber Security -->
+                <div class="service-card-modern">
+                    <div class="service-icon-box">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.s3_title">Cyber Security Solutions</h3>
+                    <p class="service-text" data-i18n="services.s3_desc">
+                        Security-conscious software engineering informed by formal Data Protection training. Expertise in External Attack Surface Management (EASM), Breach and Attack Simulation (BAS), and threat modeling.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">EASM</span>
+                        <span class="service-tag">BAS</span>
+                        <span class="service-tag">Data Defense</span>
+                        <span class="service-tag">Audit</span>
+                    </div>
+                </div>
+
+                <!-- Games & 3D -->
+                <div class="service-card-modern">
+                    <div class="service-icon-box">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.s4_title">Interactive 3D &amp; Games</h3>
+                    <p class="service-text" data-i18n="services.s4_desc">
+                        Multi-platform interactive software engineering with Unity3D and C#. Experience spans mobile games, WebGL browser experiences, real-time multiplayer networking, and custom 3D asset workflows (Blender, 3ds Max).
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">Unity3D</span>
+                        <span class="service-tag">C#</span>
+                        <span class="service-tag">Blender</span>
+                        <span class="service-tag">WebGL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section-modern" id="portfolio">
+        <div class="container">
+            <div class="section-header-modern">
+                <span class="section-tag" data-i18n="portfolio.tag">// 05. FEATURED PROJECTS</span>
+                <h2 class="section-title" data-i18n="portfolio.title">Selected Works &amp; Case Studies</h2>
+                <p class="section-subtitle" data-i18n="portfolio.subtitle">Explore 16 shipped systems spanning enterprise cyber security platforms, AI chatbots, business analytics, and 3D games.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="portfolio-filters-wrapper">
+                <ul class="portfolio-filters-list" id="portfolio-flters">
+                    <li class="filter-btn active" data-filter="*" data-i18n="portfolio.filter_all">All Projects (16)</li>
+                    <li class="filter-btn" data-filter=".ai-sec" data-i18n="portfolio.filter_ai_sec">AI &amp; Cyber Security</li>
+                    <li class="filter-btn" data-filter=".apps" data-i18n="portfolio.filter_apps">Enterprise &amp; Web Apps</li>
+                    <li class="filter-btn" data-filter=".games" data-i18n="portfolio.filter_games">Games &amp; 3D</li>
+                </ul>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="row portfolio-container">
+
+                <!-- 1. AiQON Security App -->
+                <div class="col-lg-4 col-md-6 portfolio-item apps ai-sec">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p1_cat">Cyber Security &bull; EASM &amp; BAS</span>
+                            <a href="security_app.html">
+                                <img class="portfolio-thumb" src="img/sequrity/01 (2).PNG" alt="AiQON Security App (EASM & BAS)">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="security_app.html" data-i18n="portfolio.p1_title">AiQON Security App (EASM &amp; BAS)</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p1_desc">
+                                Enterprise cyber security intelligence platform combining External Attack Surface Management and Breach &amp; Attack Simulation with AI-driven threat modeling.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">React</span>
+                                <span class="portfolio-tech-tag">Django</span>
+                                <span class="portfolio-tech-tag">Python</span>
+                                <span class="portfolio-tech-tag">PostgreSQL</span>
+                                <span class="portfolio-tech-tag">OpenAI API</span>
+                            </div>
+                            <a href="security_app.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. AiQONassist -->
+                <div class="col-lg-4 col-md-6 portfolio-item apps ai-sec">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p2_cat">AI Knowledge Base &bull; B2B Chatbot</span>
+                            <a href="aiqon_assist.html">
+                                <img class="portfolio-thumb" src="img/AiQONassist/2.PNG" alt="AiQONassist (B2B AI Chatbot)">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="aiqon_assist.html" data-i18n="portfolio.p2_title">AiQONassist (B2B AI Chatbot)</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p2_desc">
+                                Multi-turn conversational AI knowledge assistant with vectorized document ingestion, automated enterprise Q&amp;A, and CRM integration workflows.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">React</span>
+                                <span class="portfolio-tech-tag">Django</span>
+                                <span class="portfolio-tech-tag">OpenAI API</span>
+                                <span class="portfolio-tech-tag">Vector DB</span>
+                            </div>
+                            <a href="aiqon_assist.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Customer Analytics Dashboard -->
+                <div class="col-lg-4 col-md-6 portfolio-item apps">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p3_cat">Enterprise Analytics &bull; Churn Prediction</span>
+                            <a href="Customer_Analytics_Dashboard.html">
+                                <img class="portfolio-thumb" src="img/portfolio-12.jpg" alt="Customer Analytics Dashboard">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="Customer_Analytics_Dashboard.html" data-i18n="portfolio.p3_title">Customer Analytics Dashboard</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p3_desc">
+                                Interactive business analytics platform with customer churn forecasting, dual-line sales metrics, scoring gauges, and dynamic cohort filtering.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">C# / WinForms</span>
+                                <span class="portfolio-tech-tag">Django</span>
+                                <span class="portfolio-tech-tag">React</span>
+                                <span class="portfolio-tech-tag">Python</span>
+                            </div>
+                            <a href="Customer_Analytics_Dashboard.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Kanji Learning App -->
+                <div class="col-lg-4 col-md-6 portfolio-item apps">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p4_cat">Educational Web App</span>
+                            <a href="kanji.html">
+                                <img class="portfolio-thumb" src="img/portfolio-5.jpg" alt="Kanji Learning App">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="kanji.html" data-i18n="portfolio.p4_title">Kanji Learning &amp; Quiz App</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p4_desc">
+                                Interactive Japanese language learning platform designed for JLPT mastery, featuring stroke orders, spaced repetition algorithms, and memory drills.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">JavaScript</span>
+                                <span class="portfolio-tech-tag">HTML5</span>
+                                <span class="portfolio-tech-tag">CSS3</span>
+                                <span class="portfolio-tech-tag">Japanese NLP</span>
+                            </div>
+                            <a href="kanji.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Shooter's Dash -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p5_cat">3D Action &bull; Unity</span>
+                            <a href="shooters_dush.html">
+                                <img class="portfolio-thumb" src="img/portfolio-14.png" alt="Shooter's Dash">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="shooters_dush.html" data-i18n="portfolio.p5_title">Shooter's Dash</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p5_desc">
+                                Fast-paced 3D arcade action game featuring custom physics, responsive weapon controls, enemy wave triggers, and particle effects.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">Shaders</span>
+                                <span class="portfolio-tech-tag">VFX</span>
+                            </div>
+                            <a href="shooters_dush.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. New Traffic -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p6_cat">Racing Simulator &bull; Unity</span>
+                            <a href="new_traffic.html">
+                                <img class="portfolio-thumb" src="img/portfolio-13.png" alt="New Traffic">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="new_traffic.html" data-i18n="portfolio.p6_title">New Traffic Simulator</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p6_desc">
+                                Urban highway traffic simulation game with multi-lane vehicle AI pathfinding, collision physics, and real-time speed mechanics.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">AI Navigation</span>
+                                <span class="portfolio-tech-tag">Physics</span>
+                            </div>
+                            <a href="new_traffic.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Desert Turns -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p7_cat">3D Low-Poly &bull; Unity</span>
+                            <a href="desert.html">
+                                <img class="portfolio-thumb" src="img/portfolio-10.png" alt="Desert Turns">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="desert.html" data-i18n="portfolio.p7_title">Desert Turns</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p7_desc">
+                                Stylized desert vehicle navigation game featuring procedural track curves, drift handling mechanics, and optimized mobile rendering.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">Blender</span>
+                                <span class="portfolio-tech-tag">Low-Poly</span>
+                            </div>
+                            <a href="desert.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Asteroids 3D -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p8_cat">Space Arcade &bull; Unity</span>
+                            <a href="asteroids.html">
+                                <img class="portfolio-thumb" src="img/portfolio-11.png" alt="Asteroids 3D">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="asteroids.html" data-i18n="portfolio.p8_title">Asteroids 3D</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p8_desc">
+                                Modern 3D reimagining of the classic space shooter with inertial flight physics, destructible asteroids, and projectile collisions.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">Orbital Physics</span>
+                            </div>
+                            <a href="asteroids.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Some RPG Game -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p9_cat">Isometric RPG &bull; Unity</span>
+                            <a href="some_rpg.html">
+                                <img class="portfolio-thumb" src="img/portfolio-1.jpg" alt="RPG Adventure">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="some_rpg.html" data-i18n="portfolio.p9_title">Isometric RPG Adventure</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p9_desc">
+                                Atmospheric top-down RPG featuring dungeon exploration, inventory management, character stat progression, and enemy state machines.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">State Machines</span>
+                                <span class="portfolio-tech-tag">Blender</span>
+                            </div>
+                            <a href="some_rpg.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Buildings Demolition -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p10_cat">Physics Simulation &bull; Unity</span>
+                            <a href="buildings_demolition.html">
+                                <img class="portfolio-thumb" src="img/portfolio-2.jpg" alt="Buildings Demolition">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="buildings_demolition.html" data-i18n="portfolio.p10_title">Buildings Demolition</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p10_desc">
+                                Physics-driven structural destruction puzzle game with realistic mass distribution, fractured mesh physics, and explosive impact calculations.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">Rigidbody Physics</span>
+                            </div>
+                            <a href="buildings_demolition.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Crossing Road -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p11_cat">Arcade Runner &bull; Unity</span>
+                            <a href="road.html">
+                                <img class="portfolio-thumb" src="img/portfolio-3.jpg" alt="Crossing Road">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="road.html" data-i18n="portfolio.p11_title">Crossing Road</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p11_desc">
+                                Reflex-testing obstacle avoidance game with timing mechanics, procedural vehicle spawners, and colorful low-poly environments.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">Mobile Controls</span>
+                            </div>
+                            <a href="road.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Fighting Game -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p12_cat">Combat Arena &bull; Unity</span>
+                            <a href="fighting.html">
+                                <img class="portfolio-thumb" src="img/portfolio-4.jpg" alt="Fighting Arena">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="fighting.html" data-i18n="portfolio.p12_title">Fighting Arena</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p12_desc">
+                                3D martial arts combat arena game featuring combo attack chains, hit-box registration algorithms, and blended animation controllers.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">Animation Blend</span>
+                            </div>
+                            <a href="fighting.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Thimbles 3D -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p13_cat">3D Puzzle &bull; Unity</span>
+                            <a href="thimnbail.html">
+                                <img class="portfolio-thumb" src="img/portfolio-6.jpg" alt="Thimbles">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="thimnbail.html" data-i18n="portfolio.p13_title">Thimbles 3D</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p13_desc">
+                                Classic cup-and-ball shell game engineered with fluid 3D cup motion, variable shuffle speed algorithms, and reward scoring.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">3D Motion</span>
+                            </div>
+                            <a href="thimnbail.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Tic Tac Toe AI -->
+                <div class="col-lg-4 col-md-6 portfolio-item games">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p14_cat">Strategy &bull; Minimax AI</span>
+                            <a href="tic.html">
+                                <img class="portfolio-thumb" src="img/portfolio-7.jpg" alt="Tic Tac Toe">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="tic.html" data-i18n="portfolio.p14_title">Tic Tac Toe AI</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p14_desc">
+                                Strategic board puzzle featuring an unbeatable Minimax algorithm opponent with variable difficulty modes and clean animations.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity3D</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">Minimax AI</span>
+                            </div>
+                            <a href="tic.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Touch Cards (WEB) -->
+                <div class="col-lg-4 col-md-6 portfolio-item games apps">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p15_cat">Web Puzzle &bull; Client-Server</span>
+                            <a href="mr_shape.html">
+                                <img class="portfolio-thumb" src="img/portfolio-8.jpg" alt="Touch Cards">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="mr_shape.html" data-i18n="portfolio.p15_title">Touch Cards (WEB)</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p15_desc">
+                                Interactive memory and spatial recognition web card game developed for high-throughput browser play and client-server synchronization.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity WebGL</span>
+                                <span class="portfolio-tech-tag">Vue.js</span>
+                                <span class="portfolio-tech-tag">Go Microservices</span>
+                            </div>
+                            <a href="mr_shape.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. Work-Work (WEB) -->
+                <div class="col-lg-4 col-md-6 portfolio-item games apps">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb-wrap">
+                            <span class="portfolio-category-badge" data-i18n="portfolio.p16_cat">Interactive Web &bull; Telemetry</span>
+                            <a href="work-work.html">
+                                <img class="portfolio-thumb" src="img/portfolio-9.jpg" alt="Work-Work">
+                            </a>
+                        </div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">
+                                <a href="work-work.html" data-i18n="portfolio.p16_title">Work-Work (WEB)</a>
+                            </h3>
+                            <p class="portfolio-desc" data-i18n="portfolio.p16_desc">
+                                Browser simulation game built with Unity WebGL, streaming real-time player telemetry and competitive leaderboard scoring through WebSockets.
+                            </p>
+                            <div class="portfolio-tech-list">
+                                <span class="portfolio-tech-tag">Unity WebGL</span>
+                                <span class="portfolio-tech-tag">C#</span>
+                                <span class="portfolio-tech-tag">WebSockets</span>
+                                <span class="portfolio-tech-tag">Go</span>
+                            </div>
+                            <a href="work-work.html" class="portfolio-link-btn">
+                                <span data-i18n="actions.explore_case_study">Explore Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-modern" id="contact">
+        <div class="container">
+            <div class="section-header-modern">
+                <span class="section-tag" data-i18n="contact.tag">// 06. GET IN TOUCH</span>
+                <h2 class="section-title" data-i18n="contact.title">Let's Discuss Your Next Project</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Whether you are hiring for senior engineering roles, seeking full-stack consulting, or interested in AI solutions, I'd love to connect.</p>
+            </div>
+
+            <div class="row">
+                <!-- Contact Direct Info -->
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="contact-info-card">
+                        <div>
+                            <h3 class="mb-4" style="font-size: 1.5rem; font-weight: 700;" data-i18n="contact.direct_title">Direct Contact</h3>
+
+                            <div class="contact-method-item">
+                                <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <div class="contact-method-label" data-i18n="contact.email_label">Direct Email</div>
+                                    <div class="contact-method-value">
+                                        <a href="mailto:wshuher@gmail.com">wshuher@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-method-item">
+                                <div class="contact-method-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <div class="contact-method-label" data-i18n="contact.location_label">Current Location</div>
+                                    <div class="contact-method-value" data-i18n="contact.location_val">Fukuoka, Japan</div>
+                                    <small class="text-muted" data-i18n="contact.location_note">Available for Remote, On-Site, or Relocation</small>
+                                </div>
+                            </div>
+
+                            <div class="contact-method-item">
+                                <div class="contact-method-icon"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <div class="contact-method-label" data-i18n="contact.response_label">Response Time</div>
+                                    <div class="contact-method-value" data-i18n="contact.response_val">Within 24 Hours</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-method-item">
+                                <div class="contact-method-icon"><i class="fas fa-comments"></i></div>
+                                <div>
+                                    <div class="contact-method-label" data-i18n="contact.languages_label">Languages</div>
+                                    <div class="contact-method-value" data-i18n="contact.languages_val">English &bull; 日本語 &bull; Русский</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="text-muted" style="font-size: 0.85rem;" data-i18n="contact.resumes_question">Looking for official resumes?</span>
+                                <a href="cv.zip" class="btn btn-sm btn-outline-light" style="border-radius: 9999px; font-size: 0.8rem;" download>
+                                    <i class="fas fa-file-archive mr-1"></i> <span data-i18n="actions.download_all_zip">Download All (ZIP)</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="contact-form-card">
+                        <h3 class="mb-4" style="font-size: 1.5rem; font-weight: 700;" data-i18n="contact.form_title">Send a Direct Message</h3>
                         <div id="success"></div>
                         <form action="https://formspree.io/f/xnqyernd" method="POST" novalidate="novalidate">
                             <div class="form-row">
-                                <div class="control-group col-sm-6">
-                                    <input name="Name" type="text" class="form-control p-4" id="name" placeholder="Your Name"
+                                <div class="form-group-modern col-sm-6 control-group">
+                                    <label class="form-label-modern" for="name" data-i18n="contact.name_label">Your Name</label>
+                                    <input name="Name" type="text" class="form-control-modern" id="name" placeholder="John Doe"
+                                        data-i18n-placeholder="contact.name_placeholder"
                                         required="required" data-validation-required-message="Please enter your name" />
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="control-group col-sm-6">
-                                    <input name="email" type="email" class="form-control p-4" id="email" placeholder="Your Email"
+                                <div class="form-group-modern col-sm-6 control-group">
+                                    <label class="form-label-modern" for="email" data-i18n="contact.email_label_form">Your Email</label>
+                                    <input name="email" type="email" class="form-control-modern" id="email" placeholder="john@example.com"
+                                        data-i18n-placeholder="contact.email_placeholder"
                                         required="required" data-validation-required-message="Please enter your email" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <input name="subject" type="text" class="form-control p-4" id="subject" placeholder="Subject"
+                            <div class="form-group-modern control-group">
+                                <label class="form-label-modern" for="subject" data-i18n="contact.subject_label">Subject</label>
+                                <input name="subject" type="text" class="form-control-modern" id="subject" placeholder="Project inquiry / Opportunity"
+                                    data-i18n-placeholder="contact.subject_placeholder"
                                     required="required" data-validation-required-message="Please enter a subject" />
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
-                                <textarea name="message" class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
-                                    required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
+                            <div class="form-group-modern control-group">
+                                <label class="form-label-modern" for="message" data-i18n="contact.message_label">Message</label>
+                                <textarea name="message" class="form-control-modern" rows="5" id="message" placeholder="Describe your project scope, timeline, or role requirements..."
+                                    data-i18n-placeholder="contact.message_placeholder"
+                                    required="required" data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-outline-primary" type="submit" id="_sendMessageButton">Send
-                                    Message</button>
+                                <button class="btn-modern-primary w-100 justify-content-center" type="submit" id="_sendMessageButton">
+                                    <span data-i18n="actions.send_message">Send Message</span>
+                                    <i class="fas fa-paper-plane ml-1"></i>
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Contact End -->
+    </section>
 
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-2 px-sm-2 px-md-2">
-        <div class="container text-center py-3">
-		Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+    <!-- Modern Footer -->
+    <footer class="footer-modern">
+        <div class="container text-center">
+            <div class="footer-brand">&lt;Aleksandr Liashenko /&gt;</div>
+            <p class="text-muted mt-1 mb-2" style="font-size: 0.9rem;" data-i18n="footer.subtitle">Full Stack Engineer &bull; AI &amp; Cybersecurity &bull; Unity 3D Developer</p>
+            <ul class="footer-nav-links justify-content-center">
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#qualification" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#skill" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#service" data-i18n="nav.services">Services</a></li>
+                <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <p class="footer-copy" data-i18n="footer.copyright">
+                &copy; Aleksandr Liashenko &bull; Fukuoka, Japan. All rights reserved.
             </p>
         </div>
-    </div>
-    <!-- Footer End -->
+    </footer>
 
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top-modern" aria-label="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -524,6 +1230,10 @@
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
+
+    <!-- Translations & i18n Engine -->
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

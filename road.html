@@ -1,185 +1,299 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Alex - Freelancer - Crossing Road game</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<title>Crossing Road 3D | Aleksandr Liashenko Portfolio</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Crossing Road, Unity, C#, Ragdoll Physics, Mobile Game, Game Developer, Android" name="keywords"/>
+<meta content="Crossing Road 3D - Humorous traffic dispatch and reaction arcade game featuring ragdoll collisions and vehicle timing mechanics by Aleksandr Liashenko." name="description"/>
+<!-- Favicon -->
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;rect width=%22100%22 height=%22100%22 rx=%2225%22 fill=%22%230a0f1d%22/&gt;&lt;text x=%2250%22 y=%2268%22 font-size=%2252%22 font-family=%22system-ui,sans-serif%22 font-weight=%22900%22 fill=%22%230bceaf%22 text-anchor=%22middle%22&gt;A&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<!-- Google Web Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"/>
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/style.css" rel="stylesheet"/>
+<!-- Modern Dark-Slate Design System -->
+<!-- Modern Dark-Slate Design System -->
+<link href="css/modern.css" rel="stylesheet"/>
+<!-- Early Language Detection (Prevents FOUT) -->
+<script>
+        (function() {
+            try {
+                var stored = localStorage.getItem('portfolio_language');
+                var isJa = stored === 'ja' || (!stored && (navigator.language || (navigator.languages && navigator.languages[0]) || '').toLowerCase().startsWith('ja'));
+                if (isJa) document.documentElement.lang = 'ja';
+            } catch(e) {}
+        })();
+    </script>
 </head>
-
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="my-navbar fixed-top shadow-sm navbar-expand-lg bg-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span style="color: white;">Alex</span></h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="index.html" class="nav-item nav-link active" style="color: white;">Home</a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>        
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
-
-
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Game</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Game</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="img/road/road-0.jpg" alt="">
-					<button type="button" class="btn-play btn-center" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/nZVntgP9wv4" data-target="#videoModal">
-                            <span></span>
-                    </button>
-                </div>
-                <div class="col-lg-7">
-                    <h3 class="mb-4">Crossing Road</h3>
-                    <p>Have you seen the crazy old women running across the busy road? There are tons of them in this game!! (No, there are no old women, only madmen XD)
-					<br>
-Call for cars, trucks, public transport and... PAVER to teach a lesson to hurrying pedestrians!!!</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.dewberry_games.crossing_road" class="btn btn-outline-primary" target="_blank">Google Play</a>
-                </div>
-            </div>
-			<div class="row row-cols-6 bottom-pics">
-				<div class="col">
-					<div class="">
-						<img class="port-square img-fluid rounded" src="img/road/road-2.jpg" alt="" style="width: fit-content;
-						height: 96px;">
-					</div>
-				</div>
-				<div class="col">
-					<div class="">
-						<img class="port-square img-fluid rounded" src="img/road/road-3.jpg" alt="" style="width: fit-content;
-						height: 96px;">
-					</div>
-				</div>
-			</div>
-        </div>
-    </div>
-    <!-- About End -->
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form text-center">
-                        <div id="success"></div>
-                        <form action="https://formspree.io/f/xnqyernd" method="POST" novalidate="novalidate">
-                            <div class="form-row">
-                                <div class="control-group col-sm-6">
-                                    <input name="Name" type="text" class="form-control p-4" id="name" placeholder="Your Name"
-                                        required="required" data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group col-sm-6">
-                                    <input name="email" type="email" class="form-control p-4" id="email" placeholder="Your Email"
-                                        required="required" data-validation-required-message="Please enter your email" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input name="subject" type="text" class="form-control p-4" id="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea name="message" class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
-                                    required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-primary" type="submit" id="_sendMessageButton">Send
-                                    Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-2 px-sm-2 px-md-2">
-        <div class="container text-center py-3">
-		Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+<body data-offset="80" data-page="road" data-spy="scroll" data-target=".navbar-modern">
+<!-- Modern Sticky Glass Navbar -->
+<nav class="navbar navbar-expand-lg navbar-modern">
+<div class="container">
+<a class="navbar-brand-modern" href="index.html">
+<div class="brand-icon">&lt;/&gt;</div>
+<div class="brand-name">Aleksandr<span>.dev</span></div>
+</a>
+<!-- Header Controls: Language Switcher + Resume + Hamburger -->
+<div class="d-flex align-items-center order-lg-3">
+<div aria-label="Language Selector" class="lang-switcher mr-2 mr-lg-3" id="langSwitcher" role="group">
+<button class="lang-btn" data-lang-set="en" title="English" type="button">EN</button>
+<button class="lang-btn" data-lang-set="ja" title="日本語" type="button">日本語</button>
+</div>
+<a class="btn-nav-cta d-none d-lg-inline-flex" href="cv.zip"><i class="fas fa-download mr-1"></i> <span data-i18n="nav.resume">Resume</span></a>
+<button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler ml-2" data-target="#navbarCollapse" data-toggle="collapse" type="button">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+<div class="collapse navbar-collapse order-lg-2" id="navbarCollapse">
+<ul class="navbar-nav mx-auto py-0">
+<li class="nav-item"><a class="nav-link" data-i18n="nav.home" href="index.html#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.about" href="index.html#about">About</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.experience" href="index.html#qualification">Experience</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.skills" href="index.html#skill">Skills</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.services" href="index.html#service">Services</a></li>
+<li class="nav-item"><a class="nav-link active" data-i18n="nav.portfolio" href="index.html#portfolio">Portfolio</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.contact" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Video Modal -->
+<div aria-hidden="true" aria-labelledby="videoModalLabel" class="modal fade modal-modern" id="videoModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="embed-responsive-item" id="video" referrerpolicy="strict-origin-when-cross-origin" src=""></iframe>
+</div>
+<div class="modal-footer-bar d-flex flex-wrap justify-content-between align-items-center">
+<small class="text-muted"><i class="fas fa-info-circle mr-1"></i> <span data-i18n="modal.video_blocked">If playback is blocked by your browser/adblocker:</span></small>
+<a class="btn btn-sm btn-outline-light" href="https://www.youtube.com/watch?v=nZVntgP9wv4" id="videoDirectLink" rel="noopener noreferrer" style="border-radius: 9999px;" target="_blank"><i class="fab fa-youtube text-danger mr-1"></i> <span data-i18n="modal.watch_youtube">Watch on YouTube</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Showcase Header -->
+<section class="project-header-section" id="project">
+<div class="container">
+<div class="project-back-nav">
+<a class="btn-modern-secondary" href="index.html#portfolio">
+<i class="fas fa-arrow-left mr-2"></i> <span data-i18n="actions.back_to_portfolio">Back to Portfolio</span>
+</a>
+</div>
+<div class="section-header-modern text-left mx-0 mb-4" style="max-width: 100%;">
+<span class="section-tag" data-i18n="pages.road.tag">// CASE STUDY • 3D ARCADE • UNITY</span>
+<h1 class="section-title" data-i18n="pages.road.title">Crossing Road 3D</h1>
+<p class="section-subtitle" data-i18n="pages.road.subtitle">
+                    Humorous traffic dispatch and reaction arcade game where players summon heavy vehicles to control reckless pedestrian traffic.
+                </p>
+</div>
+<!-- Main Showcase Card -->
+<div class="project-detail-card">
+<div class="row align-items-center">
+<div class="col-lg-6 mb-4 mb-lg-0">
+<div class="project-hero-wrap">
+<img alt="Crossing Road Gameplay" class="img-fluid" src="img/road/road-0.jpg"/>
+<button aria-label="Play Gameplay Video" class="btn-play-modern" data-src="https://www.youtube.com/embed/nZVntgP9wv4" data-target="#videoModal" data-toggle="modal" type="button">
+<i class="fas fa-play ml-1"></i>
+</button>
+</div>
+<div class="project-img-hint"><i class="fas fa-play-circle mr-1"></i> <span data-i18n="details.video_hint">Click center button to watch gameplay trailer</span></div>
+<!-- Gallery Thumbnails -->
+<div class="project-gallery-grid">
+<a class="project-gallery-thumb" data-lightbox="road-gallery" data-title="Crossing Road - Intersection Overview" href="img/road/road-0.jpg">
+<img alt="Crossing Road Screenshot 0" src="img/road/road-0.jpg"/>
+</a>
+<a class="project-gallery-thumb" data-lightbox="road-gallery" data-title="Crossing Road - Heavy Vehicle Dispatch" href="img/road/road-2.jpg">
+<img alt="Crossing Road Screenshot 1" src="img/road/road-2.jpg"/>
+</a>
+<a class="project-gallery-thumb" data-lightbox="road-gallery" data-title="Crossing Road - Multi-Lane Chaos" href="img/road/road-3.jpg">
+<img alt="Crossing Road Screenshot 2" src="img/road/road-3.jpg"/>
+</a>
+</div>
+</div>
+<div class="col-lg-6 pl-lg-4">
+<!-- Project Meta Pills -->
+<div class="project-meta-deck">
+<span class="project-meta-pill"><i class="fas fa-gamepad"></i> <span data-i18n="pages.road.pills.p1">Platform: Android / Mobile</span></span>
+<span class="project-meta-pill"><i class="fas fa-user"></i> <span data-i18n="pages.road.pills.p2">Role: Solo Game Developer</span></span>
+<span class="project-meta-pill"><i class="fas fa-cube"></i> <span data-i18n="pages.road.pills.p3">Engine: Unity3D</span></span>
+</div>
+<!-- Tech Stack Tags -->
+<div class="portfolio-tech-list mb-3">
+<span class="portfolio-tech-tag">Unity3D</span>
+<span class="portfolio-tech-tag">C#</span>
+<span class="portfolio-tech-tag">Ragdoll Physics</span>
+<span class="portfolio-tech-tag">Crowd AI / NavMesh</span>
+<span class="portfolio-tech-tag">Particle FX</span>
+</div>
+<h3 class="mb-3" data-i18n="pages.road.overview_title" style="font-size: 1.45rem; font-weight: 700;">Gameplay &amp; Architecture</h3>
+<p data-i18n="pages.road.p1">
+                            Ever wanted to take control of urban traffic flow? In Crossing Road 3D, waves of frantic pedestrians attempt to cross busy multi-lane thoroughfares. Players time and dispatch cars, heavy trucks, buses, and street rollers to clear the roadway.
+                        </p>
+<p data-i18n="pages.road.p2">
+                            Built with Unity's NavMesh crowd agent systems, instant ragdoll transition triggers on collision impact, and scalable spawn velocity curves to keep reaction gameplay snappy and engaging.
+                        </p>
+<div class="d-flex flex-wrap gap-3 mt-4 pt-2">
+<a class="btn-modern-primary mr-2 mb-2" href="https://play.google.com/store/apps/details?id=com.dewberry_games.crossing_road" rel="noopener noreferrer" target="_blank"><i class="fab fa-google-play mr-2"></i> <span data-i18n="actions.google_play">Google Play Store</span></a>
+<button class="btn-modern-secondary mr-2 mb-2" data-src="https://www.youtube.com/embed/nZVntgP9wv4" data-target="#videoModal" data-toggle="modal" type="button"><i class="fas fa-play mr-2"></i> <span data-i18n="actions.watch_trailer">Watch Trailer</span></button>
+<a class="btn-modern-secondary mb-2" href="index.html#portfolio">
+<i class="fas fa-arrow-left mr-2"></i> <span data-i18n="actions.all_projects">All Projects</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Modern Contact Section -->
+<section class="section-modern" id="contact">
+<div class="container">
+<div class="section-header-modern">
+<span class="section-tag" data-i18n="contact.tag">// 06. GET IN TOUCH</span>
+<h2 class="section-title" data-i18n="contact.title">Let's Discuss Your Next Project</h2>
+<p class="section-subtitle" data-i18n="contact.subtitle">Whether you are hiring for senior engineering roles, seeking game development expertise, or exploring collaboration, I'd love to connect.</p>
+</div>
+<div class="row">
+<!-- Contact Direct Info -->
+<div class="col-lg-5 mb-5 mb-lg-0">
+<div class="contact-info-card">
+<div>
+<h3 class="mb-4" data-i18n="contact.direct_title" style="font-size: 1.5rem; font-weight: 700;">Direct Contact</h3>
+<div class="contact-method-item">
+<div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
+<div>
+<div class="contact-method-label" data-i18n="contact.email_label">Direct Email</div>
+<div class="contact-method-value">
+<a href="mailto:wshuher@gmail.com">wshuher@gmail.com</a>
+</div>
+</div>
+</div>
+<div class="contact-method-item">
+<div class="contact-method-icon"><i class="fas fa-map-marker-alt"></i></div>
+<div>
+<div class="contact-method-label" data-i18n="contact.location_label">Current Location</div>
+<div class="contact-method-value" data-i18n="contact.location_val">Fukuoka, Japan</div>
+<small class="text-muted" data-i18n="contact.location_note">Available for Remote, On-Site, or Relocation</small>
+</div>
+</div>
+<div class="contact-method-item">
+<div class="contact-method-icon"><i class="fas fa-clock"></i></div>
+<div>
+<div class="contact-method-label" data-i18n="contact.response_label">Response Time</div>
+<div class="contact-method-value" data-i18n="contact.response_val">Within 24 Hours</div>
+</div>
+</div>
+<div class="contact-method-item">
+<div class="contact-method-icon"><i class="fas fa-comments"></i></div>
+<div>
+<div class="contact-method-label" data-i18n="contact.languages_label">Languages</div>
+<div class="contact-method-value" data-i18n="contact.languages_val">English • 日本語 • Русский</div>
+</div>
+</div>
+</div>
+<div class="pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+<div class="d-flex align-items-center justify-content-between">
+<span class="text-muted" data-i18n="contact.resumes_question" style="font-size: 0.85rem;">Looking for official resumes?</span>
+<a class="btn btn-sm btn-outline-light" download="" href="cv.zip" style="border-radius: 9999px; font-size: 0.8rem;">
+<i class="fas fa-file-archive mr-1"></i> <span data-i18n="actions.download_all_zip">Download All (ZIP)</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Form -->
+<div class="col-lg-7">
+<div class="contact-form-card">
+<h3 class="mb-4" data-i18n="contact.form_title" style="font-size: 1.5rem; font-weight: 700;">Send a Direct Message</h3>
+<div id="success"></div>
+<form action="https://formspree.io/f/xnqyernd" method="POST" novalidate="novalidate">
+<div class="form-row">
+<div class="form-group-modern col-sm-6 control-group">
+<label class="form-label-modern" data-i18n="contact.name_label" for="name">Your Name</label>
+<input class="form-control-modern" data-i18n-placeholder="contact.name_placeholder" data-validation-required-message="Please enter your name" id="name" name="Name" placeholder="John Doe" required="required" type="text"/>
+<p class="help-block text-danger"></p>
+</div>
+<div class="form-group-modern col-sm-6 control-group">
+<label class="form-label-modern" data-i18n="contact.email_label_form" for="email">Your Email</label>
+<input class="form-control-modern" data-i18n-placeholder="contact.email_placeholder" data-validation-required-message="Please enter your email" id="email" name="email" placeholder="john@example.com" required="required" type="email"/>
+<p class="help-block text-danger"></p>
+</div>
+</div>
+<div class="form-group-modern control-group">
+<label class="form-label-modern" data-i18n="contact.subject_label" for="subject">Subject</label>
+<input class="form-control-modern" data-i18n-placeholder="contact.subject_placeholder" data-validation-required-message="Please enter a subject" id="subject" name="subject" placeholder="Project inquiry / Opportunity" required="required" type="text"/>
+<p class="help-block text-danger"></p>
+</div>
+<div class="form-group-modern control-group">
+<label class="form-label-modern" data-i18n="contact.message_label" for="message">Message</label>
+<textarea class="form-control-modern" data-i18n-placeholder="contact.message_placeholder" data-validation-required-message="Please enter your message" id="message" name="message" placeholder="Describe your project scope, timeline, or role requirements..." required="required" rows="5"></textarea>
+<p class="help-block text-danger"></p>
+</div>
+<div>
+<button class="btn-modern-primary w-100 justify-content-center" id="_sendMessageButton" type="submit">
+<span data-i18n="actions.send_message">Send Message</span>
+<i class="fas fa-paper-plane ml-1"></i>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Modern Footer -->
+<footer class="footer-modern">
+<div class="container text-center">
+<div class="footer-brand">&lt;Aleksandr Liashenko /&gt;</div>
+<p class="text-muted mt-1 mb-2" data-i18n="footer.subtitle" style="font-size: 0.9rem;">Full Stack Engineer • AI &amp; Cybersecurity • Unity 3D Developer</p>
+<ul class="footer-nav-links justify-content-center">
+<li><a data-i18n="nav.home" href="index.html#home">Home</a></li>
+<li><a data-i18n="nav.about" href="index.html#about">About</a></li>
+<li><a data-i18n="nav.experience" href="index.html#qualification">Experience</a></li>
+<li><a data-i18n="nav.skills" href="index.html#skill">Skills</a></li>
+<li><a data-i18n="nav.services" href="index.html#service">Services</a></li>
+<li><a data-i18n="nav.portfolio" href="index.html#portfolio">Portfolio</a></li>
+<li><a data-i18n="nav.contact" href="#contact">Contact</a></li>
+</ul>
+<p class="footer-copy" data-i18n="footer.copyright">
+                © Aleksandr Liashenko • Fukuoka, Japan. All rights reserved.
             </p>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<a aria-label="Back to Top" class="back-to-top-modern" href="#">
+<i class="fas fa-chevron-up"></i>
+</a>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/typed/typed.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+<!-- Translations & i18n Engine -->
+<script src="js/translations.js"></script>
+<script src="js/i18n.js"></script>
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
 </body>
-
 </html>

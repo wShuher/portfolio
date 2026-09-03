@@ -9986,6 +9986,7 @@ h6,
 .port-square
 {
 	height: 256px;
+	object-fit: cover;
 }
 
 .btn-center
@@ -10001,6 +10002,16 @@ h6,
 .bottom-pics
 {
 	margin: 12px 0px 0px -16px;
+}
+
+.bottom-pics img {
+	object-fit: cover;
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+}
+
+.bottom-pics img:hover {
+	transform: scale(1.05);
 }
 
 .my-navbar {
