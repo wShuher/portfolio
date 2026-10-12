@@ -35,7 +35,9 @@ const translations = {
       "watch_interactive_demo": "Watch Interactive Demo",
       "google_play": "Google Play Store",
       "inquire_collab": "Inquire About Collaboration",
-      "inquire_about_project": "Inquire About This Project"
+      "inquire_about_project": "Inquire About This Project",
+      "play_live": "Play Live Game",
+      "visit_site": "Visit Website"
     },
     "hero": {
       "status_badge": "Available for Senior Roles & Contracts • Fukuoka, Japan",
@@ -132,11 +134,14 @@ const translations = {
     "portfolio": {
       "tag": "// 05. FEATURED PROJECTS",
       "title": "Selected Works &amp; Case Studies",
-      "subtitle": "Explore 16 shipped systems spanning enterprise cyber security platforms, AI chatbots, business analytics, and 3D games.",
-      "filter_all": "All Projects (16)",
+      "subtitle": "Explore 17 shipped systems spanning full-stack multiplayer platforms, enterprise cyber security, AI chatbots, and 3D games.",
+      "filter_all": "All Projects (17)",
       "filter_ai_sec": "AI &amp; Cyber Security",
       "filter_apps": "Enterprise &amp; Web Apps",
       "filter_games": "Games &amp; 3D",
+      "aethelgard_cat": "Full-Stack • Real-Time Multiplayer Strategy",
+      "aethelgard_title": "Aethelgard: Exoplanet Frontier",
+      "aethelgard_desc": "Real-time multiplayer planetary strategy platform featuring WebSockets, authoritative game engine, Paddle Billing, ELO matchmaking, and procedural audio.",
       "p1_cat": "Cyber Security • EASM &amp; BAS",
       "p1_title": "AiQON Security App (EASM &amp; BAS)",
       "p1_desc": "Enterprise cyber security intelligence platform combining External Attack Surface Management and Breach &amp; Attack Simulation with AI-driven threat modeling.",
@@ -523,6 +528,37 @@ const translations = {
         "overview_title": "Platform &amp; Architectural Highlights",
         "p1": "\"Work-Work\" is an interactive browser application designed to introduce children and young learners to the vast spectrum of modern professions. Players experience more than 40 unique job roles, ranging from tactical police investigation to studio art restoration.",
         "p2": "Optimized for seamless zero-install browser execution via lightweight WebGL export, texture streaming compression, and cross-platform touch and mouse input bridges."
+      },
+      "aethelgard": {
+        "meta": {
+          "title": "Aethelgard: Exoplanet Frontier (Real-Time Multiplayer Strategy) | Aleksandr Liashenko Portfolio",
+          "description": "Aethelgard: Exoplanet Frontier - Full-stack real-time multiplayer planetary strategy platform engineered by Aleksandr Liashenko. Built with React 18, Django Channels, WebSockets, Redis, Celery, Docker, and Paddle Billing."
+        },
+        "tag": "// CASE STUDY • FULL-STACK MULTIPLAYER STRATEGY",
+        "title": "Aethelgard: Exoplanet Frontier",
+        "subtitle": "Real-time multiplayer planetary strategy platform engineered with React, WebSockets, Django Channels, PostgreSQL, Redis, Celery, Docker, and Paddle Billing.",
+        "pills": {
+          "p1": "Platform: Web (Live at aethelgard-game.com)",
+          "p2": "Role: Full-Stack Architect &amp; Sole Developer",
+          "p3": "Stack: React 18 • Django Channels • Redis • Docker"
+        },
+        "overview_title": "System Overview &amp; Game Architecture",
+        "p1": "<strong>Aethelgard: Exoplanet Frontier</strong> is a full-stack, real-time multiplayer planetary strategy platform live at <a href=\"https://aethelgard-game.com/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--primary); text-decoration: underline;\">aethelgard-game.com</a>. Players take on the role of Planetary Commanders competing to establish resource monopolies, construct orbital transit conduits and outposts, trade with orbital depots, deploy tactical modules, and be the first to reach 10 Victory Points.",
+        "p2": "Architected around strict server authority, the platform decouples game logic into 19 isolated domain services in Python. State mutations are managed through an authoritative Finite State Machine (FSM) and pure reducer with Token Bucket rate limiting and Redis distributed locks to eliminate concurrency conflicts during high-speed player actions.",
+        "p3": "The ecosystem integrates full-stack monetization and advertising: Paddle Billing with localized price previews, one-page checkout overlays, and HMAC-verified webhooks alongside a multi-tiered NitroPay ads system. Background Celery workers handle turn expiration timeouts, AFK player kicks, bot takeovers, and placement-based ELO rating calculations.",
+        "features_title": "Core System Architecture &amp; Capabilities",
+        "f1_title": "Real-Time WebSockets &amp; Authoritative Reducer",
+        "f1_desc": "Bidirectional duplex communication powered by Django Channels (ASGI) and Redis PubSub. Commands are sequenced per room queue, validated against strict contracts, and executed via a pure state reducer with Fog of War privacy filtering.",
+        "f2_title": "Asynchronous Celery &amp; Placement ELO",
+        "f2_desc": "Celery workers backed by Redis handle automated turn timeouts, fallback moves, AFK skip/kick logic, stale lobby garbage collection, and post-match placement-based ELO calculations (+10 / +7 / -6 / -10) with global leaderboards.",
+        "f3_title": "Paddle Billing &amp; SaaS Monetization",
+        "f3_desc": "End-to-end Paddle Billing pipeline with localized client PricePreview, one-page checkout overlay modals, 1-day free trials, self-service customer portal session generation, and HMAC-SHA256 verified webhook event synchronization.",
+        "f4_title": "NitroPay Waterfall &amp; Multi-Tier Ads",
+        "f4_desc": "Integrated NitroPay ad delivery engine featuring 160x600px desktop skyscraper units, responsive auto-centering 320x50px mobile units, 5-second guest entry video reward ads, and resilient procedural offline fallback banners.",
+        "f5_title": "Security Hardening, Throttling &amp; Audit Logs",
+        "f5_desc": "Single-use 60s WebSocket handshake tickets, Token Bucket rate limiting, 150ms per-player cooldowns, robotic anomaly detection triggering CAPTCHA challenges, and immutable PostgreSQL security audit logging.",
+        "f6_title": "Automated Testing Suite &amp; CI/CD Pipeline",
+        "f6_desc": "Comprehensive test suite spanning 240 unit, integration, and Hypothesis property-based fuzz tests, coupled with an automated GitHub Actions CI/CD pipeline deploying zero-downtime rolling container updates to an Ubuntu VPS."
       }
     }
   },
@@ -557,7 +593,9 @@ const translations = {
       "watch_interactive_demo": "インタラクティブデモを見る",
       "google_play": "Google Play ストア",
       "inquire_collab": "共同開発・案件のご相談",
-      "inquire_about_project": "このプロジェクトについて相談する"
+      "inquire_about_project": "このプロジェクトについて相談する",
+      "play_live": "ゲームをプレイ",
+      "visit_site": "サイトを開く"
     },
     "hero": {
       "status_badge": "シニア職・業務委託可能 • 福岡県在住",
@@ -654,11 +692,14 @@ const translations = {
     "portfolio": {
       "tag": "// 05. 開発実績",
       "title": "プロジェクト事例 &amp; 制作実績",
-      "subtitle": "サイバーセキュリティ基盤、AIチャットボット、企業向けデータ分析、3Dゲームなど16の実績を紹介。",
-      "filter_all": "すべてのプロジェクト (16)",
+      "subtitle": "リアルタイム対戦基盤、サイバーセキュリティ、AIチャットボット、3Dゲームなど17の実績を紹介。",
+      "filter_all": "すべてのプロジェクト (17)",
       "filter_ai_sec": "AI・セキュリティ",
       "filter_apps": "業務システム・Web",
       "filter_games": "ゲーム・3D",
+      "aethelgard_cat": "フルスタック • リアルタイム対戦ストラテジー",
+      "aethelgard_title": "Aethelgard: Exoplanet Frontier",
+      "aethelgard_desc": "WebSockets、サーバー権限型ゲームエンジン、Paddle決済、ELOレーティング、手続き型Web Audioを統合したリアルタイム惑星開拓対戦プラットフォーム。",
       "p1_cat": "サイバーセキュリティ • EASM &amp; BAS",
       "p1_title": "AiQON Security App (EASM &amp; BAS)",
       "p1_desc": "外部攻撃対象領域管理（EASM）と侵入シミュレーション（BAS）にAI脅威モデリングを統合したエンタープライズセキュリティ基盤。",
@@ -1045,6 +1086,37 @@ const translations = {
         "overview_title": "プラットフォーム &amp; アーキテクチャ",
         "p1": "「Work-Work」は、子どもたちに現代社会の多様な職業を知ってもらうためのブラウザ向け体験型アプリケーションです。警察官の捜査から美術品の修復まで、40種類を超える多彩な職業の仕事をミニゲーム形式で体験できます。",
         "p2": "インストール不要でブラウザ上で即座に軽快動作するよう、Unity WebGL出力の最適化、テクスチャ圧縮ストリーミング、タッチ・マウス両対応の入力ブリッジを実装しています。"
+      },
+      "aethelgard": {
+        "meta": {
+          "title": "Aethelgard: Exoplanet Frontier（リアルタイム対戦ストラテジー）| リャシェンコ・アレクサンドル",
+          "description": "Aethelgard: Exoplanet Frontier - React、Django Channels、WebSockets、PostgreSQL、Redis、Celery、Docker、Paddle決済で構築されたフルスタックリアルタイム対戦ストラテジー基盤。"
+        },
+        "tag": "// 開発事例 • フルスタック・マルチプレイヤー対戦基盤",
+        "title": "Aethelgard: Exoplanet Frontier",
+        "subtitle": "React、WebSockets、Django Channels、PostgreSQL、Redis、Celery、Docker、Paddle決済で構築されたリアルタイム惑星開拓マルチプレイヤー基盤。",
+        "pills": {
+          "p1": "プラットフォーム: Webブラウザ（aethelgard-game.com）",
+          "p2": "担当: フルスタックアーキテクト &amp; 単独開発",
+          "p3": "構成: React 18 • Django Channels • Redis • Docker"
+        },
+        "overview_title": "システム概要 &amp; ゲームアーキテクチャ",
+        "p1": "<strong>Aethelgard: Exoplanet Frontier</strong>は、<a href=\"https://aethelgard-game.com/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--primary); text-decoration: underline;\">aethelgard-game.com</a>にて本番運用中のフルスタック・リアルタイムマルチプレイヤー対戦ストラテジーゲームです。プレイヤーは惑星司令官として資源を独占し、中継コンジットや前哨基地を建設し、軌道デポとの交易や戦術モジュールを駆使して最速で10勝利点（VP）の獲得を目指します。",
+        "p2": "厳格なサーバー権限モデルを採用し、ゲームロジックをPythonの19の独立ドメインサービスに分離。有限状態マシン（FSM）と純粋状態リデューサー、トークンバケットによるレート制限、Redis分散ロックにより、複数プレイヤーの同時操作時における競合や不正入力を完全に遮断しています。",
+        "p3": "Paddle Billingによる多通貨・PPP対応のサブスクリプション決済（1日無料トライアル、セルフサービスポータル、HMAC署名検証付きWebhook）、NitroPayによる広告マネタイズ、Celeryによるターン自動タイムアウト・放置プレイヤーキック・ELOレーティング計算など、本番サービス運用に必要な全機能を完備しています。",
+        "features_title": "主要システムアーキテクチャ &amp; 技術的特徴",
+        "f1_title": "リアルタイムWebSockets &amp; サーバー権限リデューサー",
+        "f1_desc": "Django Channels（ASGI）とRedis PubSubによる双方向全二重通信。クライアント入力はルームごとの実行キューで順次検証され、戦場の霧（Fog of War）による秘匿情報フィルタリングを経て全クライアントへ配信されます。",
+        "f2_title": "Celery非同期処理 &amp; ELOレーティング基盤",
+        "f2_desc": "RedisをブローカーとするCeleryワーカーがターンの制限時間タイムアウト、AFKプレイヤーの自動キック・AI代替、定期的な空きロビー回収、試合終了時の順位連動型ELOレーティング計算（+10/+7/-6/-10）を実行します。",
+        "f3_title": "Paddle Billing &amp; SaaS決済パイプライン",
+        "f3_desc": "クライアント側での地域別価格プレビュー、ワンページ決済オーバーレイ、1日無料トライアル、セルフサービス顧客ポータルセッション発行、HMAC-SHA256署名検証付きWebhookによる顧客・サブスク状態のDBミラーリング。",
+        "f4_title": "NitroPay広告基盤 &amp; 多層フォールバック",
+        "f4_desc": "160x600pxデスクトップ縦型スカイスクレイパー広告、320x50pxレスポンシブ配置、ゲスト入場時の5秒リワード動画広告を実装。アドブロッカー稼働時にも自前の手続き型バナーへと多層フォールバックします。",
+        "f5_title": "セキュリティ防御・スロットリング &amp; 監査ログ",
+        "f5_desc": "有効期限60秒のワンタイムWebSocket接続チケット、トークンバケット制限、150msの操作クールダウン、異常操作検知によるCAPTCHA挑戦発火、改ざん不能なPostgreSQLセキュリティ監査ログを徹底。",
+        "f6_title": "自動テストスイート &amp; CI/CDパイプライン",
+        "f6_desc": "単体・結合・Hypothesisプロパティベースのファズテストなど240件のテストを完備。GitHub ActionsによるCI/CDでUbuntu VPSへのDocker Composeゼロダウンタイムローリングデプロイを自動化しています。"
       }
     }
   }

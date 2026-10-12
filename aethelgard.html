@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Aethelgard: Exoplanet Frontier (Real-Time Multiplayer Strategy) | Aleksandr Liashenko Portfolio</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Aethelgard, Real-Time Multiplayer, Django Channels, WebSockets, React, Redis, Celery, Docker, Paddle Billing, Full Stack, Strategy Game, Python, TypeScript" name="keywords"/>
+<meta content="Aethelgard: Exoplanet Frontier - Full-stack real-time multiplayer planetary strategy platform engineered by Aleksandr Liashenko. Built with React 18, Django Channels, WebSockets, PostgreSQL, Redis, Celery, Docker, and Paddle Billing." name="description"/>
+<!-- Favicon -->
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;rect width=%22100%22 height=%22100%22 rx=%2225%22 fill=%22%230a0f1d%22/&gt;&lt;text x=%2250%22 y=%2268%22 font-size=%2252%22 font-family=%22system-ui,sans-serif%22 font-weight=%22900%22 fill=%22%230bceaf%22 text-anchor=%22middle%22&gt;A&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<!-- Google Web Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"/>
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/style.css" rel="stylesheet"/>
+<!-- Modern Dark-Slate Design System -->
+<link href="css/modern.css" rel="stylesheet"/>
+<!-- Early Language Detection (Prevents FOUT) -->
+<script>
+        (function() {
+            try {
+                var stored = localStorage.getItem('portfolio_language');
+                var isJa = stored === 'ja' || (!stored && (navigator.language || (navigator.languages && navigator.languages[0]) || '').toLowerCase().startsWith('ja'));
+                if (isJa) document.documentElement.lang = 'ja';
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body data-offset="80" data-page="aethelgard" data-spy="scroll" data-target=".navbar-modern">
+<!-- Modern Sticky Glass Navbar -->
+<nav class="navbar navbar-expand-lg navbar-modern">
+<div class="container">
+<a class="navbar-brand-modern" href="index.html">
+<div class="brand-icon">&lt;/&gt;</div>
+<div class="brand-name">Aleksandr<span>.dev</span></div>
+</a>
+<!-- Header Controls: Language Switcher + Resume + Hamburger -->
+<div class="d-flex align-items-center order-lg-3">
+<div aria-label="Language Selector" class="lang-switcher mr-2 mr-lg-3" id="langSwitcher" role="group">
+<button class="lang-btn" data-lang-set="en" title="English" type="button">EN</button>
+<button class="lang-btn" data-lang-set="ja" title="日本語" type="button">日本語</button>
+</div>
+<a class="btn-nav-cta d-none d-lg-inline-flex" href="cv.zip"><i class="fas fa-download mr-1"></i> <span data-i18n="nav.resume">Resume</span></a>
+<button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler ml-2" data-target="#navbarCollapse" data-toggle="collapse" type="button">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+<div class="collapse navbar-collapse order-lg-2" id="navbarCollapse">
+<ul class="navbar-nav mx-auto py-0">
+<li class="nav-item"><a class="nav-link" data-i18n="nav.home" href="index.html#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.about" href="index.html#about">About</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.experience" href="index.html#qualification">Experience</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.skills" href="index.html#skill">Skills</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.services" href="index.html#service">Services</a></li>
+<li class="nav-item"><a class="nav-link active" data-i18n="nav.portfolio" href="index.html#portfolio">Portfolio</a></li>
+<li class="nav-item"><a class="nav-link" data-i18n="nav.contact" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Project Showcase Header -->
+<section class="project-header-section" id="project">
+<div class="container">
+<div class="project-back-nav">
+<a class="btn-modern-secondary" href="index.html#portfolio">
+<i class="fas fa-arrow-left mr-2"></i> <span data-i18n="actions.back_to_portfolio">Back to Portfolio</span>
+</a>
+</div>
+<div class="section-header-modern text-left mx-0 mb-4" style="max-width: 100%;">
+<span class="section-tag" data-i18n="pages.aethelgard.tag">// CASE STUDY • FULL-STACK MULTIPLAYER STRATEGY</span>
+<h1 class="section-title" data-i18n="pages.aethelgard.title">Aethelgard: Exoplanet Frontier</h1>
+<p class="section-subtitle" data-i18n="pages.aethelgard.subtitle">
+                    Real-time multiplayer planetary strategy platform engineered with React, WebSockets, Django Channels, PostgreSQL, Redis, Celery, Docker, and Paddle Billing.
+                </p>
+</div>
+
+<!-- Main Showcase Card -->
+<div class="project-detail-card">
+<div class="row align-items-center">
+<div class="col-lg-6 mb-4 mb-lg-0">
+<div class="project-hero-wrap">
+<a data-lightbox="aethelgard-project" data-title="Aethelgard: Exoplanet Frontier - Full Planetary Match Workspace" href="img/aethelgard/board.webp">
+<img alt="Aethelgard Planetary Board &amp; HUD" class="img-fluid" src="img/aethelgard/board.webp"/>
+</a>
+</div>
+<div class="project-img-hint">
+<i class="fas fa-search-plus mr-1"></i> <span data-i18n="details.lightbox_hint">Click image to open high-resolution lightbox</span>
+</div>
+
+<!-- Gallery Thumbnails Grid -->
+<div class="project-gallery-grid">
+<a class="project-gallery-thumb" data-lightbox="aethelgard-project" data-title="The Full Aethelgard Board &amp; Tactical HUD" href="img/aethelgard/board.webp">
+<img alt="Board and HUD" src="img/aethelgard/board.webp"/>
+</a>
+<a class="project-gallery-thumb" data-lightbox="aethelgard-project" data-title="Match Lobby &amp; Public Room Browser (Humans and Bots)" href="img/aethelgard/lobby.webp">
+<img alt="Lobby Browser" src="img/aethelgard/lobby.webp"/>
+</a>
+<a class="project-gallery-thumb" data-lightbox="aethelgard-project" data-title="Commander Hand &amp; Dynamic Resource Distribution Bar" href="img/aethelgard/hand.webp">
+<img alt="Hand Interface" src="img/aethelgard/hand.webp"/>
+</a>
+<a class="project-gallery-thumb" data-lightbox="aethelgard-project" data-title="Phase 03: Domestic Trading &amp; Orbital Depot Negotiation" href="img/aethelgard/trade.webp">
+<img alt="Trading Interface" src="img/aethelgard/trade.webp"/>
+</a>
+<a class="project-gallery-thumb" data-lightbox="aethelgard-project" data-title="Competitive Global ELO Leaderboard &amp; Match History" href="img/aethelgard/leaderboard.webp">
+<img alt="ELO Leaderboard" src="img/aethelgard/leaderboard.webp"/>
+</a>
+<a class="project-gallery-thumb" data-lightbox="aethelgard-project" data-title="10 Victory Points Terminal Victory State &amp; Celebration" href="img/aethelgard/victory.webp">
+<img alt="Victory Celebration" src="img/aethelgard/victory.webp"/>
+</a>
+<a class="project-gallery-thumb" data-lightbox="aethelgard-project" data-title="Tactical Module Cards Showcase (Security Drones, Market Dominance)" href="img/aethelgard/modules.webp">
+<img alt="Tactical Modules" src="img/aethelgard/modules.webp"/>
+</a>
+<a class="project-gallery-thumb" data-lightbox="aethelgard-project" data-title="Cross-Platform Responsive HUD on Mobile &amp; Tablet" href="img/aethelgard/mobile.webp">
+<img alt="Mobile Display" src="img/aethelgard/mobile.webp"/>
+</a>
+</div>
+</div>
+
+<div class="col-lg-6 pl-lg-4">
+<!-- Project Meta Pills -->
+<div class="project-meta-deck">
+<span class="project-meta-pill"><i class="fas fa-globe"></i> <span data-i18n="pages.aethelgard.pills.p1">Platform: Web (Live at aethelgard-game.com)</span></span>
+<span class="project-meta-pill"><i class="fas fa-user-tie"></i> <span data-i18n="pages.aethelgard.pills.p2">Role: Full-Stack Architect &amp; Sole Developer</span></span>
+<span class="project-meta-pill"><i class="fas fa-cubes"></i> <span data-i18n="pages.aethelgard.pills.p3">Stack: React 18 • Django Channels • Redis • Docker</span></span>
+</div>
+
+<!-- Tech Stack Tags -->
+<div class="portfolio-tech-list mb-3">
+<span class="portfolio-tech-tag">React 18</span>
+<span class="portfolio-tech-tag">TypeScript</span>
+<span class="portfolio-tech-tag">Django Channels</span>
+<span class="portfolio-tech-tag">Python 3.12</span>
+<span class="portfolio-tech-tag">WebSockets</span>
+<span class="portfolio-tech-tag">PostgreSQL 16</span>
+<span class="portfolio-tech-tag">Redis PubSub</span>
+<span class="portfolio-tech-tag">PgBouncer</span>
+<span class="portfolio-tech-tag">Celery &amp; Beat</span>
+<span class="portfolio-tech-tag">Docker Compose</span>
+<span class="portfolio-tech-tag">Paddle Billing</span>
+<span class="portfolio-tech-tag">NitroPay Ads</span>
+<span class="portfolio-tech-tag">Web Audio API</span>
+</div>
+
+<h3 class="mb-3" data-i18n="pages.aethelgard.overview_title" style="font-size: 1.45rem; font-weight: 700;">System Overview &amp; Game Architecture</h3>
+<p data-i18n="pages.aethelgard.p1">
+<strong>Aethelgard: Exoplanet Frontier</strong> is a full-stack, real-time multiplayer planetary strategy platform live at <a href="https://aethelgard-game.com/" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;" target="_blank">aethelgard-game.com</a>. Players take on the role of Planetary Commanders competing to establish resource monopolies, construct orbital transit conduits and outposts, trade with orbital depots, deploy tactical modules, and be the first to reach 10 Victory Points.
+                        </p>
+<p data-i18n="pages.aethelgard.p2">
+                            Architected around strict server authority, the platform decouples game logic into 19 isolated domain services in Python. State mutations are managed through an authoritative Finite State Machine (FSM) and pure reducer with Token Bucket rate limiting and Redis distributed locks to eliminate concurrency conflicts during high-speed player actions.
+                        </p>
+<p data-i18n="pages.aethelgard.p3">
+                            The ecosystem integrates full-stack monetization and advertising: Paddle Billing with localized price previews, one-page checkout overlays, and HMAC-verified webhooks alongside a multi-tiered NitroPay ads system. Background Celery workers handle turn expiration timeouts, AFK player kicks, bot takeovers, and placement-based ELO rating calculations.
+                        </p>
+
+<div class="d-flex flex-wrap gap-3 mt-4 pt-2">
+<a class="btn-modern-primary mr-2 mb-2" href="https://aethelgard-game.com/" rel="noopener noreferrer" target="_blank">
+<i class="fas fa-gamepad mr-2"></i> <span data-i18n="actions.play_live">Play Live Game</span>
+<i class="fas fa-external-link-alt ml-1" style="font-size: 0.8rem;"></i>
+</a>
+<a class="btn-modern-secondary mr-2 mb-2" href="index.html#portfolio">
+<i class="fas fa-arrow-left mr-2"></i> <span data-i18n="actions.all_projects">All Projects</span>
+</a>
+<a class="btn-modern-secondary mb-2" href="#contact">
+<i class="fas fa-envelope mr-1"></i> <span data-i18n="actions.inquire_project">Inquire About This Project</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Core Capabilities Section -->
+<div class="mb-5">
+<h3 class="mb-4" data-i18n="pages.aethelgard.features_title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-main);">
+                    Core System Architecture &amp; Capabilities
+                </h3>
+<div class="row">
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="project-feature-card">
+<div class="project-feature-icon">
+<i class="fas fa-network-wired"></i>
+</div>
+<h4 class="project-feature-title" data-i18n="pages.aethelgard.f1_title">Real-Time WebSockets &amp; Authoritative Reducer</h4>
+<p class="text-secondary" data-i18n="pages.aethelgard.f1_desc" style="font-size: 0.92rem; line-height: 1.6;">
+                                Bidirectional duplex communication powered by Django Channels (ASGI) and Redis PubSub. Commands are sequenced per room queue, validated against strict contracts, and executed via a pure state reducer with Fog of War privacy filtering.
+                            </p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="project-feature-card">
+<div class="project-feature-icon">
+<i class="fas fa-clock"></i>
+</div>
+<h4 class="project-feature-title" data-i18n="pages.aethelgard.f2_title">Asynchronous Celery &amp; Placement ELO</h4>
+<p class="text-secondary" data-i18n="pages.aethelgard.f2_desc" style="font-size: 0.92rem; line-height: 1.6;">
+                                Celery workers backed by Redis handle automated turn timeouts, fallback moves, AFK skip/kick logic, stale lobby garbage collection, and post-match placement-based ELO calculations (+10 / +7 / -6 / -10) with global leaderboards.
+                            </p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="project-feature-card">
+<div class="project-feature-icon">
+<i class="fas fa-credit-card"></i>
+</div>
+<h4 class="project-feature-title" data-i18n="pages.aethelgard.f3_title">Paddle Billing &amp; SaaS Monetization</h4>
+<p class="text-secondary" data-i18n="pages.aethelgard.f3_desc" style="font-size: 0.92rem; line-height: 1.6;">
+                                End-to-end Paddle Billing pipeline with localized client PricePreview, one-page checkout overlay modals, 1-day free trials, self-service customer portal session generation, and HMAC-SHA256 verified webhook event synchronization.
+                            </p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="project-feature-card">
+<div class="project-feature-icon">
+<i class="fas fa-ad"></i>
+</div>
+<h4 class="project-feature-title" data-i18n="pages.aethelgard.f4_title">NitroPay Waterfall &amp; Multi-Tier Ads</h4>
+<p class="text-secondary" data-i18n="pages.aethelgard.f4_desc" style="font-size: 0.92rem; line-height: 1.6;">
+                                Integrated NitroPay ad delivery engine featuring 160x600px desktop skyscraper units, responsive auto-centering 320x50px mobile units, 5-second guest entry video reward ads, and resilient procedural offline fallback banners.
+                            </p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="project-feature-card">
+<div class="project-feature-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<h4 class="project-feature-title" data-i18n="pages.aethelgard.f5_title">Security Hardening, Throttling &amp; Audit Logs</h4>
+<p class="text-secondary" data-i18n="pages.aethelgard.f5_desc" style="font-size: 0.92rem; line-height: 1.6;">
+                                Single-use 60s WebSocket handshake tickets, Token Bucket rate limiting, 150ms per-player cooldowns, robotic anomaly detection triggering CAPTCHA challenges, and immutable PostgreSQL security audit logging.
+                            </p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="project-feature-card">
+<div class="project-feature-icon">
+<i class="fas fa-rocket"></i>
+</div>
+<h4 class="project-feature-title" data-i18n="pages.aethelgard.f6_title">Automated Testing Suite &amp; CI/CD Pipeline</h4>
+<p class="text-secondary" data-i18n="pages.aethelgard.f6_desc" style="font-size: 0.92rem; line-height: 1.6;">
+                                Comprehensive test suite spanning 240 unit, integration, and Hypothesis property-based fuzz tests, coupled with an automated GitHub Actions CI/CD pipeline deploying zero-downtime rolling container updates to an Ubuntu VPS.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Modern Contact Section -->
+<section class="section-modern" id="contact">
+<div class="container">
+<div class="section-header-modern">
+<span class="section-tag" data-i18n="contact.tag">// 06. GET IN TOUCH</span>
+<h2 class="section-title" data-i18n="contact.title">Let's Discuss Your Next Project</h2>
+<p class="section-subtitle" data-i18n="contact.subtitle">Whether you are hiring for senior engineering roles, seeking full-stack consulting, or interested in AI solutions, I'd love to connect.</p>
+</div>
+<div class="row">
+<!-- Contact Direct Info -->
+<div class="col-lg-5 mb-5 mb-lg-0">
+<div class="contact-info-card">
+<div>
+<h3 class="mb-4" data-i18n="contact.direct_title" style="font-size: 1.5rem; font-weight: 700;">Direct Contact</h3>
+<div class="contact-method-item">
+<div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
+<div>
+<div class="contact-method-label" data-i18n="contact.email_label">Direct Email</div>
+<div class="contact-method-value">
+<a href="mailto:wshuher@gmail.com">wshuher@gmail.com</a>
+</div>
+</div>
+</div>
+<div class="contact-method-item">
+<div class="contact-method-icon"><i class="fas fa-map-marker-alt"></i></div>
+<div>
+<div class="contact-method-label" data-i18n="contact.location_label">Current Location</div>
+<div class="contact-method-value" data-i18n="contact.location_val">Fukuoka, Japan</div>
+<small class="text-muted" data-i18n="contact.location_note">Available for Remote, On-Site, or Relocation</small>
+</div>
+</div>
+<div class="contact-method-item">
+<div class="contact-method-icon"><i class="fas fa-clock"></i></div>
+<div>
+<div class="contact-method-label" data-i18n="contact.response_label">Response Time</div>
+<div class="contact-method-value" data-i18n="contact.response_val">Within 24 Hours</div>
+</div>
+</div>
+<div class="contact-method-item">
+<div class="contact-method-icon"><i class="fas fa-comments"></i></div>
+<div>
+<div class="contact-method-label" data-i18n="contact.languages_label">Languages</div>
+<div class="contact-method-value" data-i18n="contact.languages_val">English • 日本語 • Русский</div>
+</div>
+</div>
+</div>
+<div class="pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+<div class="d-flex align-items-center justify-content-between">
+<span class="text-muted" data-i18n="contact.resumes_question" style="font-size: 0.85rem;">Looking for official resumes?</span>
+<a class="btn btn-sm btn-outline-light" download="" href="cv.zip" style="border-radius: 9999px; font-size: 0.8rem;">
+<i class="fas fa-file-archive mr-1"></i> <span data-i18n="actions.download_all_zip">Download All (ZIP)</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Form -->
+<div class="col-lg-7">
+<div class="contact-form-card">
+<h3 class="mb-4" data-i18n="contact.form_title" style="font-size: 1.5rem; font-weight: 700;">Send a Direct Message</h3>
+<div id="success"></div>
+<form action="https://formspree.io/f/xnqyernd" method="POST" novalidate="novalidate">
+<div class="form-row">
+<div class="form-group-modern col-sm-6 control-group">
+<label class="form-label-modern" data-i18n="contact.name_label" for="name">Your Name</label>
+<input class="form-control-modern" data-i18n-placeholder="contact.name_placeholder" data-validation-required-message="Please enter your name" id="name" name="Name" placeholder="John Doe" required="required" type="text"/>
+<p class="help-block text-danger"></p>
+</div>
+<div class="form-group-modern col-sm-6 control-group">
+<label class="form-label-modern" data-i18n="contact.email_label_form" for="email">Your Email</label>
+<input class="form-control-modern" data-i18n-placeholder="contact.email_placeholder" data-validation-required-message="Please enter your email" id="email" name="email" placeholder="john@example.com" required="required" type="email"/>
+<p class="help-block text-danger"></p>
+</div>
+</div>
+<div class="form-group-modern control-group">
+<label class="form-label-modern" data-i18n="contact.subject_label" for="subject">Subject</label>
+<input class="form-control-modern" data-i18n-placeholder="contact.subject_placeholder" data-validation-required-message="Please enter a subject" id="subject" name="subject" placeholder="Project inquiry / Opportunity" required="required" type="text"/>
+<p class="help-block text-danger"></p>
+</div>
+<div class="form-group-modern control-group">
+<label class="form-label-modern" data-i18n="contact.message_label" for="message">Message</label>
+<textarea class="form-control-modern" data-i18n-placeholder="contact.message_placeholder" data-validation-required-message="Please enter your message" id="message" name="message" placeholder="Describe your project scope, timeline, or role requirements..." required="required" rows="5"></textarea>
+<p class="help-block text-danger"></p>
+</div>
+<div>
+<button class="btn-modern-primary w-100 justify-content-center" id="_sendMessageButton" type="submit">
+<span data-i18n="actions.send_message">Send Message</span>
+<i class="fas fa-paper-plane ml-1"></i>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Modern Footer -->
+<footer class="footer-modern">
+<div class="container text-center">
+<div class="footer-brand">&lt;Aleksandr Liashenko /&gt;</div>
+<p class="text-muted mt-1 mb-2" data-i18n="footer.subtitle" style="font-size: 0.9rem;">Full Stack Engineer • AI &amp; Cybersecurity • Unity 3D Developer</p>
+<ul class="footer-nav-links justify-content-center">
+<li><a data-i18n="nav.home" href="index.html#home">Home</a></li>
+<li><a data-i18n="nav.about" href="index.html#about">About</a></li>
+<li><a data-i18n="nav.experience" href="index.html#qualification">Experience</a></li>
+<li><a data-i18n="nav.skills" href="index.html#skill">Skills</a></li>
+<li><a data-i18n="nav.services" href="index.html#service">Services</a></li>
+<li><a data-i18n="nav.portfolio" href="index.html#portfolio">Portfolio</a></li>
+<li><a data-i18n="nav.contact" href="#contact">Contact</a></li>
+</ul>
+<p class="footer-copy" data-i18n="footer.copyright">
+                © Aleksandr Liashenko • Fukuoka, Japan. All rights reserved.
+            </p>
+</div>
+</footer>
+
+<!-- Back to Top Button -->
+<a aria-label="Back to Top" class="back-to-top-modern" href="#">
+<i class="fas fa-chevron-up"></i>
+</a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/typed/typed.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+<!-- Translations & i18n Engine -->
+<script src="js/translations.js"></script>
+<script src="js/i18n.js"></script>
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+</html>
